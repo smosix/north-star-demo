@@ -5218,25 +5218,24 @@ const mins=list=>Math.round(list.reduce((a,s)=>a+s.dur,0)/60);
 function routeSteps(r){ return S.filter((s,i)=>r.parts.includes(s.part)||(r.extra||[]).includes(i)); }
 
 // ---------------- audio per stop ----------------
-let DB=null, AST=null, AUD={}, STAT={}, busy=false; const audOf=k=>AUD[k]||STAT[k]; const player=new Audio(); player.preload='auto';
+let DB=null, AST=null, AUD={}, busy=false; const player=new Audio(); player.preload='auto';
 const fmtD=s=>{ s=Math.round(s||0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
-function audCount(){ return S.filter(s=>audOf(s.key)).length; }
-fetch('audio/manifest.json').then(r=>r.ok?r.json():{}).then(m=>{ STAT=m||{}; refreshModal(); if(running) renderAud(); }).catch(()=>{});
+function audCount(){ return S.filter(s=>AUD[s.key]).length; }
 function refreshModal(){ const n=audCount(); $('#ntAudOnRow').hidden=!n; $('#ntAudCount').textContent=`(${n} of ${S.length} stops have audio)`; $('#ntAudHelp').hidden=!AST; }
 (async()=>{ try{ if(!window.claude||!window.claude.use) return; const [d,a]=await Promise.all([window.claude.use('db').catch(()=>null),window.claude.use('assets').catch(()=>null)]); DB=d; AST=a;
   if(DB){ DB.collection('tourAudio').onSnapshot(snap=>{ const o={}; snap.docs.forEach(x=>{ const v=x.data(); if(v&&v.id) o[x.id]=v; }); AUD=o; refreshModal(); if(running) renderAud(); },()=>{}); }
   refreshModal(); if(running) renderAud(); }catch(e){} })();
 function renderAud(msg){
-  const el=$('#ntAud'); const s=steps[idx]; if(!s){ el.hidden=true; return; } const a=audOf(s.key);
+  const el=$('#ntAud'); const s=steps[idx]; if(!s){ el.hidden=true; return; } const a=AUD[s.key];
   if(!a&&!AST){ el.hidden=true; return; } el.hidden=false;
   if(busy){ el.innerHTML=`<span>${msg||'Working…'}</span>`; return; }
   el.innerHTML=(a?`<span class="nt-dot ${audOn?'':'off'}"></span><span><b>Audio</b> · ${fmtD(a.dur)}${audOn?'':' · muted'}</span><button type="button" data-ntaud="play">Play from start</button>`:`<span class="nt-dot off"></span><span>No audio for this stop</span>`)
    +(AST?(a?`<button type="button" data-ntaud="add">Replace</button><button type="button" class="danger" data-ntaud="del">Remove</button>`:`<button type="button" data-ntaud="add">Add audio</button>`):'')
    +(msg?`<span>${msg}</span>`:'');
 }
-function playStepAudio(s,my){ player.pause(); audDone=false; const a=audOf(s.key); if(!a||!audOn) return false;
-  player.src=a.src||('/_blob/'+a.id); player.currentTime=0;
-  player.onended=()=>{ if(my!==token||!running) return; audDone=true; if(auto&&!paused&&remain<=0) Promise.resolve(s._act).then(()=>setTimeout(()=>{ if(my===token&&running&&!paused&&idx<steps.length-1) go(idx+1); },1000)); };
+function playStepAudio(s,my){ player.pause(); audDone=false; const a=AUD[s.key]; if(!a||!audOn) return false;
+  player.src='/_blob/'+a.id; player.currentTime=0;
+  player.onended=()=>{ if(my!==token||!running) return; audDone=true; if(auto&&!paused) Promise.resolve(s._act).then(()=>setTimeout(()=>{ if(my===token&&running&&!paused&&idx<steps.length-1) go(idx+1); },1000)); };
   if(!paused) player.play().catch(()=>{ renderAud('Press Play to hear the audio'); });
   return true; }
 async function convert(file,onP){
@@ -5332,13 +5331,13 @@ function place(){
 function loop(){
   cancelAnimationFrame(raf); clearInterval(placeT); placeT=setInterval(place,300);
   const tick=now=>{ if(!running) return; const dt=now-lastTick; lastTick=now; const s=steps[idx];
-    if(s&&!$('#ntCard').hidden){ if(!paused&&auto){ remain-=dt; if(remain<=0&&(!s._hasAud||audDone)){ if(idx<steps.length-1) go(idx+1); else { paused=true; $('#ntPlay').textContent='Play'; } } }
-      $('#ntBar').style.width=(s._hasAud&&(audOf(s.key).dur||0)>s.dur?(player.duration&&isFinite(player.duration)?100*player.currentTime/player.duration:(audOf(s.key).dur?100*player.currentTime/audOf(s.key).dur:0)):Math.max(0,Math.min(100,100*(1-remain/(s.dur*1000)))))+'%'; }
+    if(s&&!$('#ntCard').hidden){ if(!paused&&auto&&!s._hasAud){ remain-=dt; if(remain<=0){ if(idx<steps.length-1) go(idx+1); else { paused=true; $('#ntPlay').textContent='Play'; } } }
+      $('#ntBar').style.width=(s._hasAud?(player.duration&&isFinite(player.duration)?100*player.currentTime/player.duration:(AUD[s.key]&&AUD[s.key].dur?100*player.currentTime/AUD[s.key].dur:0)):Math.max(0,Math.min(100,100*(1-remain/(s.dur*1000)))))+'%'; }
     raf=requestAnimationFrame(tick); };
   raf=requestAnimationFrame(tick);
 }
 function togglePause(){ if(!running) return; if(!auto){ auto=true; paused=false; } else paused=!paused; $('#ntPlay').textContent=paused?'Play':'Pause';
-  const s=steps[idx]; if(s&&s._hasAud){ if(paused) player.pause(); else if(!audDone) player.play().catch(()=>{}); } }
+  const s=steps[idx]; if(s&&s._hasAud){ if(paused) player.pause(); else if(audDone){ if(idx<steps.length-1) go(idx+1); } else player.play().catch(()=>{}); } }
 function next(){ if(idx<steps.length-1) go(idx+1); else stop(); }
 function back(){ if(idx>0) go(idx-1); }
 $('#ntNext').addEventListener('click',next); $('#ntBack').addEventListener('click',back); $('#ntPlay').addEventListener('click',togglePause); $('#ntExit').addEventListener('click',stop);

@@ -75,6 +75,8 @@ def main():
                 sys.exit(f"OpenAI error {e.code}: {e.read().decode()[:300]}")
         manifest[key] = {"src": f"audio/{key}.mp3", "dur": duration(path)}
     json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=1)
+    # manifest.js lets the page load the list when opened straight from disk (file://)
+    open(os.path.join(OUT, "manifest.js"), "w").write("window.__NT_AUDIO=" + json.dumps(manifest) + ";\n")
     print(f"Done: {len(manifest)} clips, {sum(v['dur'] or 0 for v in manifest.values())/60:.1f} min of audio.")
 
 

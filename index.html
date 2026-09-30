@@ -5092,7 +5092,7 @@ who=NS.getCur(); apply();
   </div>
 </div>
 
-<script>
+<script src="audio/manifest.js"></script><script>
 (function(){
 "use strict";
 const NS=window.__NS; if(!NS) return;
@@ -5221,7 +5221,7 @@ function routeSteps(r){ return S.filter((s,i)=>r.parts.includes(s.part)||(r.extr
 let DB=null, AST=null, AUD={}, STAT={}, busy=false; const audOf=k=>AUD[k]||STAT[k]; const player=new Audio(); player.preload='auto';
 const fmtD=s=>{ s=Math.round(s||0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
 function audCount(){ return S.filter(s=>audOf(s.key)).length; }
-fetch('audio/manifest.json').then(r=>r.ok?r.json():{}).then(m=>{ STAT=m||{}; refreshModal(); if(running) renderAud(); }).catch(()=>{});
+if(window.__NT_AUDIO){ STAT=window.__NT_AUDIO; setTimeout(refreshModal); } else fetch('audio/manifest.json').then(r=>r.ok?r.json():{}).then(m=>{ STAT=m||{}; refreshModal(); if(running) renderAud(); }).catch(()=>{});
 function refreshModal(){ const n=audCount(); $('#ntAudOnRow').hidden=!n; $('#ntAudCount').textContent=`(${n} of ${S.length} stops have audio)`; $('#ntAudHelp').hidden=!AST; }
 (async()=>{ try{ if(!window.claude||!window.claude.use) return; const [d,a]=await Promise.all([window.claude.use('db').catch(()=>null),window.claude.use('assets').catch(()=>null)]); DB=d; AST=a;
   if(DB){ DB.collection('tourAudio').onSnapshot(snap=>{ const o={}; snap.docs.forEach(x=>{ const v=x.data(); if(v&&v.id) o[x.id]=v; }); AUD=o; refreshModal(); if(running) renderAud(); },()=>{}); }

@@ -57,13 +57,21 @@ def tts(text, instructions, path):
     req = urllib.request.Request("https://api.openai.com/v1/audio/speech", data=body, headers={
         "Authorization": "Bearer " + os.environ["OPENAI_API_KEY"],
         "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as r, open(path, "wb") as f:
-        f.write(r.read())
-    if SPEED != 1.0:
-        tmp = path + ".tmp.mp3"
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-filter:a",
-                        f"atempo={SPEED}", "-b:a", "128k", tmp], check=True)
-        os.replace(tmp, path)
+    # Work in temp files so a failed download or ffmpeg run leaves the existing clip untouched.
+    raw, fast = path + ".raw.mp3", path + ".fast.mp3"
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r, open(raw, "wb") as f:
+            f.write(r.read())
+        if SPEED != 1.0:
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-filter:a",
+                            f"atempo={SPEED}", "-b:a", "128k", fast], check=True)
+            os.replace(fast, path)
+        else:
+            os.replace(raw, path)
+    finally:
+        for t in (raw, fast):
+            if os.path.exists(t):
+                os.remove(t)
 
 
 def main():

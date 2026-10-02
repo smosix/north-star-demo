@@ -3,7 +3,7 @@
   "stop": 1,
   "key": "s01",
   "title": "Welcome   (title card)",
-  "text": "Claire, thank you for agreeing for Rolls-Royce SMR to be the nuclear industry’s case study for our AI Tutoring Tool. I want to show you two things today. First, exactly what we’ve agreed: the AI tutor running on your Export Control course, and what it gives each employee and each manager. Then, briefly, where this goes: the complete platform the same method grows into."
+  "text": "Thank you for agreeing to be the nuclear industry’s case study for this. I want to show you two things today. First, exactly what we’ve agreed: the AI tutor running on your Export Control course, and what it gives each employee and each manager. Then, briefly, where this goes: the complete platform the same method grows into."
  },
  {
   "stop": 2,
@@ -15,25 +15,25 @@
   "stop": 3,
   "key": "s03",
   "title": "EXP-100 in eight subsections",
-  "text": "Selecting Export Control as your case study course is ideal. Everyone at Rolls-Royce SMR takes it, because everyone handles controlled nuclear technology in some form. So from day one it gives you comparable evidence about every single employee. We’ve broken it into eight subsections. For each one we’ve listed the misconceptions people typically bring with them, and mapped the competencies it gives evidence for."
+  "text": "We chose Export Control deliberately. Everyone at Rolls-Royce SMR takes it, because everyone handles controlled nuclear technology in some form. So from day one it gives you comparable evidence about every single employee. We’ve broken it into eight subsections. For each one we’ve listed the misconceptions people typically bring with them, and mapped the competencies it gives evidence for."
  },
  {
   "stop": 4,
   "key": "s04",
   "title": "The tutor asks, it doesn’t tell   (demand ladder)",
-  "text": "This is the heart of the tutor. When someone gets something wrong, it doesn’t give them the answer. It steps down a ladder of questions until it finds the exact point where their understanding breaks, then climbs back up so they state the right answer themselves. That’s the difference between completing a course and mastering it. And how far down the ladder they had to go, and how long it took, is itself evidence we can use."
+  "text": "This is the heart of the AI Tutoring Tool, which we’ve co-developed with PA Consulting. When someone gets something wrong, it doesn’t give them the answer. It steps down a ladder of questions until it finds the exact point where their understanding breaks, then climbs back up so they state the right answer themselves. That’s the difference between completing a course and mastering it. And how far down the ladder they had to go, and how long it took, is itself evidence we can use."
  },
  {
   "stop": 5,
   "key": "s05",
   "title": "The Learning Zone   (now viewing as an employee)",
-  "text": "Let’s see it as an employee sees it. This is the Learning Zone. EXP-100 is here with the tutor built in: about 70 minutes, in short sections."
+  "text": "Let’s see it as an employee sees it. This is the Learning Zone, where they find all their courses. On screen is EXP-100, with the tutor built in: about 70 minutes, in short sections."
  },
  {
   "stop": 6,
   "key": "s06",
   "title": "A tutor beside every step",
-  "text": "We’re in section four, intangible transfer. An engineer is about to email pump drawings to a supplier in Czechia. On the right is the tutor. It opens by asking what the learner already thinks, so it knows where they’re starting from. Along the top you can see its four stages: diagnose, confront and correct, prove, retain. And the counters: confident answers, unsure answers, and misconceptions still open."
+  "text": "We’re in section four, intangible transfer. An engineer is about to email pump drawings to a supplier in Czechia, and the learner has to decide what he should do before they can move on. On the right is the tutor. It opens by asking what the learner already thinks, so it knows where they’re starting from. Along the top you can see its four stages: diagnose, confront and correct, prove, retain. And the counters: confident answers, unsure answers, and misconceptions still open."
  },
  {
   "stop": 7,
@@ -45,7 +45,7 @@
   "stop": 8,
   "key": "s08",
   "title": "A diagnosis",
-  "text": "The tutor has tagged it: misconception S4a, ‘emailing a colleague in our own company is never an export’. That tag goes to the manager as an open misconception. Now look at what it says back. No answer. A question that makes them look at their own thinking again. Here it asks: the email starts in our system. Where are the drawings once the supplier opens them?"
+  "text": "The tutor has tagged it: misconception S4a, ‘emailing a colleague in our own company is never an export’. That stays private to the learner. It has to be safe to be wrong here, or people stop saying when they’re unsure. Now look at what it says back. No answer. A question that makes them look at their own thinking again. Here it asks: the email starts in our system. Where are the drawings once the supplier opens them?"
  },
  {
   "stop": 9,
@@ -87,7 +87,7 @@
   "stop": 15,
   "key": "s15",
   "title": "Aisha’s North Star   (learner dashboard)",
-  "text": "This is what an employee sees when they sign in. Aisha is a Buyer. Her North Star is Head of Procurement. She can see the whole route, the next rung, and two readiness scores: how ready she is for her next step, and for her North Star. They move every time she completes a section. For most people, this is the first time anyone has shown them a clear path, with evidence."
+  "text": "This is what an employee sees when they sign in. Aisha is a Buyer. Her North Star is Head of Procurement. She can see the whole route, the next rung, and two scores: how her knowledge measures up for her next step, and for her North Star. They move every time she completes a section. They measure knowledge only; experience and SQEP sign-off are judged separately. For most people, this is the first time anyone has shown them a clear path, with evidence."
  },
  {
   "stop": 16,
@@ -111,13 +111,13 @@
   "stop": 19,
   "key": "s19",
   "title": "Mastery, not completion   (now viewing as a manager)",
-  "text": "Now the manager. Every person, every subsection. Green is mastered, amber developing, red not yet. A dot means a misconception is still open. And the flags on the right show where someone’s evidence sits below what their current role needs. Today most managers get a tick box that says ‘completed’. This tells them what their people actually understand."
+  "text": "Now the manager. Every person, every subsection. Green is mastered, amber developing, red not yet. What each person gets wrong while they’re learning stays private to them. The manager sees results. And the flags on the right show where someone’s evidence sits below what their current role needs. Today most managers get a tick box that says ‘completed’. This tells them what their people actually understand."
  },
  {
   "stop": 20,
   "key": "s20",
   "title": "Where to act, and who is ready",
-  "text": "On the left, hotspots: the misconceptions the team shares. If four people think a video call isn’t a transfer, one ten-minute briefing fixes it for all of them. On the right, how ready each person is for the next rung on their own North Star."
+  "text": "On the left, hotspots: the misconceptions the team shares, shown only when three or more people share one, and never by name. If three people think a video call isn’t a transfer, one ten-minute briefing fixes it for all of them. On the right, how close each person’s knowledge is to the next rung on their own North Star."
  },
  {
   "stop": 21,
@@ -129,7 +129,7 @@
   "stop": 22,
   "key": "s22",
   "title": "Insights",
-  "text": "As patterns emerge, insights go to the right person. Someone reaching mastery. A team hotspot. Someone now ready for promotion."
+  "text": "As patterns emerge, insights go to the right person. Someone reaching mastery. A team hotspot. Someone whose knowledge is now ready for a next step."
  },
  {
   "stop": 23,
@@ -159,7 +159,7 @@
   "stop": 27,
   "key": "s27",
   "title": "Now the platform   (title card)",
-  "text": "Everything you’ve seen so far runs on one course. Now imagine the same method across every course, every person and every SMR. I know you’re planning your own learning platform next year, so let me show you what that could look like."
+  "text": "Everything you’ve seen so far runs on one course. North Star is Developing Experts’ platform, and it is built to do much more. Now imagine the same method across every course, every person and every SMR. I know you’re planning your own learning platform next year, so let me show you what that could look like."
  },
  {
   "stop": 28,
@@ -207,7 +207,7 @@
   "stop": 35,
   "key": "s35",
   "title": "Which courses, and when",
-  "text": "And the gap turns into course orders, with cohorts and order-by dates, so people are trained in time for their in-post date rather than after it."
+  "text": "For each gap, it shows which course people need, groups them into cohorts, and gives a date to book it by. That date is counted back from when each person starts in post, so they’re trained before they start, not after."
  },
  {
   "stop": 36,

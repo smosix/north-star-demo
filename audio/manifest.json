@@ -1,170 +1,170 @@
 {
  "s01": {
   "src": "audio/s01.mp3",
-  "dur": 22.0
+  "dur": 22.2
  },
  "s02": {
   "src": "audio/s02.mp3",
-  "dur": 26.1
+  "dur": 29.8
  },
  "s03": {
   "src": "audio/s03.mp3",
-  "dur": 25.6
+  "dur": 26.8
  },
  "s04": {
   "src": "audio/s04.mp3",
-  "dur": 24.8
+  "dur": 30.3
  },
  "s05": {
   "src": "audio/s05.mp3",
-  "dur": 10.7
+  "dur": 13.7
  },
  "s06": {
   "src": "audio/s06.mp3",
-  "dur": 25.5
+  "dur": 35.0
  },
  "s07": {
   "src": "audio/s07.mp3",
-  "dur": 11.8
+  "dur": 13.4
  },
  "s08": {
   "src": "audio/s08.mp3",
-  "dur": 23.1
+  "dur": 26.9
  },
  "s09": {
   "src": "audio/s09.mp3",
-  "dur": 11.0
+  "dur": 11.4
  },
  "s10": {
   "src": "audio/s10.mp3",
-  "dur": 19.5
+  "dur": 21.0
  },
  "s11": {
   "src": "audio/s11.mp3",
-  "dur": 26.9
+  "dur": 28.1
  },
  "s12": {
   "src": "audio/s12.mp3",
-  "dur": 17.1
+  "dur": 19.8
  },
  "s13": {
   "src": "audio/s13.mp3",
-  "dur": 19.7
+  "dur": 21.6
  },
  "s14": {
   "src": "audio/s14.mp3",
-  "dur": 17.0
+  "dur": 21.6
  },
  "s15": {
   "src": "audio/s15.mp3",
-  "dur": 21.9
+  "dur": 30.6
  },
  "s16": {
   "src": "audio/s16.mp3",
-  "dur": 18.8
+  "dur": 18.0
  },
  "s17": {
   "src": "audio/s17.mp3",
-  "dur": 19.2
+  "dur": 22.2
  },
  "s18": {
   "src": "audio/s18.mp3",
-  "dur": 17.9
+  "dur": 21.9
  },
  "s19": {
   "src": "audio/s19.mp3",
-  "dur": 21.3
+  "dur": 25.0
  },
  "s20": {
   "src": "audio/s20.mp3",
-  "dur": 16.1
+  "dur": 23.5
  },
  "s21": {
   "src": "audio/s21.mp3",
-  "dur": 14.1
+  "dur": 16.5
  },
  "s22": {
   "src": "audio/s22.mp3",
-  "dur": 9.2
+  "dur": 11.2
  },
  "s23": {
   "src": "audio/s23.mp3",
-  "dur": 7.0
+  "dur": 6.3
  },
  "s24": {
   "src": "audio/s24.mp3",
-  "dur": 19.9
+  "dur": 19.2
  },
  "s25": {
   "src": "audio/s25.mp3",
-  "dur": 14.3
+  "dur": 15.0
  },
  "s26": {
   "src": "audio/s26.mp3",
-  "dur": 15.0
+  "dur": 16.7
  },
  "s27": {
   "src": "audio/s27.mp3",
-  "dur": 15.4
+  "dur": 20.7
  },
  "s28": {
   "src": "audio/s28.mp3",
-  "dur": 10.6
+  "dur": 11.6
  },
  "s29": {
   "src": "audio/s29.mp3",
-  "dur": 7.6
+  "dur": 7.7
  },
  "s30": {
   "src": "audio/s30.mp3",
-  "dur": 11.4
+  "dur": 12.7
  },
  "s31": {
   "src": "audio/s31.mp3",
-  "dur": 15.6
+  "dur": 15.0
  },
  "s32": {
   "src": "audio/s32.mp3",
-  "dur": 13.0
+  "dur": 14.3
  },
  "s33": {
   "src": "audio/s33.mp3",
-  "dur": 19.5
+  "dur": 22.2
  },
  "s34": {
   "src": "audio/s34.mp3",
-  "dur": 15.1
+  "dur": 16.0
  },
  "s35": {
   "src": "audio/s35.mp3",
-  "dur": 8.9
+  "dur": 16.2
  },
  "s36": {
   "src": "audio/s36.mp3",
-  "dur": 12.9
+  "dur": 13.2
  },
  "s37": {
   "src": "audio/s37.mp3",
-  "dur": 7.0
+  "dur": 6.9
  },
  "s38": {
   "src": "audio/s38.mp3",
-  "dur": 6.0
+  "dur": 6.5
  },
  "s39": {
   "src": "audio/s39.mp3",
-  "dur": 7.0
+  "dur": 5.7
  },
  "s40": {
   "src": "audio/s40.mp3",
-  "dur": 18.1
+  "dur": 21.2
  },
  "s41": {
   "src": "audio/s41.mp3",
-  "dur": 12.6
+  "dur": 12.3
  },
  "s42": {
   "src": "audio/s42.mp3",
-  "dur": 23.6
+  "dur": 27.5
  }
 }

@@ -17,11 +17,11 @@ MODEL = "gpt-4o-mini-tts"
 VOICE = os.environ.get("VOICE", "fable")  # fable is the most British-sounding OpenAI voice
 # gpt-4o-mini-tts ignores the API's speed setting, so clips are sped up afterwards with
 # ffmpeg (atempo keeps the pitch natural). 1.0 = as recorded.
-SPEED = float(os.environ.get("SPEED", "1.1"))
+SPEED = float(os.environ.get("SPEED", "1.0"))
 INSTRUCTIONS = (
     "Speak with a natural, warm British English accent, like an experienced consultant "
     "presenting a product demo to a senior client in a meeting room. Conversational and "
-    "confident, at a brisk but clear pace, with natural pauses at full stops. Never salesy or theatrical."
+    "confident, unhurried, with natural pauses at full stops. Never salesy or theatrical."
 )
 VISION_INSTRUCTIONS = INSTRUCTIONS + (
     " For this part, lift the energy slightly: less 'here is what you have bought', "

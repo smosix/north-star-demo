@@ -5275,7 +5275,7 @@ function goTour(k){
 }
 function renderTour(){
   const el = $('#tour'), T = TOUR[tour.i];
-  if (tour.min) { narStop(); el.innerHTML = `<button type="button" class="tourmin" id="tourOpen"><span>${sceneSVG(T[5])}</span>Feature tour · stop ${tour.i+1} of ${TOUR.length} <b>+ Show</b></button>`; $('#tourOpen').onclick = ()=>{ tour.min=false; saveTour(); renderTour(); }; return; }
+  if (tour.min) { narStop(); el.innerHTML = `<button type="button" class="tourmin" id="tourOpen"><span>${sceneSVG(T[5])}</span>Feature tour · stop ${tour.i+1} of ${TOUR.length} <b>+ Show</b></button>`; $('#tourOpen').onclick = ()=>{ tour.min=false; saveTour(); renderTour(); narPlay(); }; return; }
   el.innerHTML = `<aside class="tourbox" role="dialog" aria-label="Feature tour">
     <div class="tourtop"><span class="tlab">Feature tour</span><span class="tpos">Stop ${tour.i+1} of ${TOUR.length}</span><button type="button" id="tourMin" aria-label="Minimise tour">– Minimise</button></div>
     <div class="tdots">${TOUR.map((t,k)=>`<button type="button" aria-label="Go to stop ${k+1}: ${esc(t[1])}" class="${k===tour.i?'on':k<tour.i?'past':''}" data-k="${k}"></button>`).join('')}</div>

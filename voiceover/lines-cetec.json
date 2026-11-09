@@ -1,0 +1,164 @@
+[
+ {
+  "stop": 1,
+  "key": "s01",
+  "title": "Welcome to the feature tour",
+  "text": "Welcome to the feature tour. This microsite is the recruitment, inspiration and engagement platform for the Clean Energy Technical Excellence College, or CETEC, in the East. It helps young people and adults try, plan and apply for careers in offshore wind, nuclear, solar, domestic renewables and the grid. One site serves learners, parents, teachers, colleges and employers across Norfolk, Suffolk and north Essex."
+ },
+ {
+  "stop": 2,
+  "key": "s02",
+  "title": "The strategy on one page",
+  "text": "This is the strategy on one page: inspire, engage, recruit. It shows how CETEC, its colleges and industry partners will reach every learner in the region, and turn interest into applications. So the steering group has a shared plan, and a shared set of measures to hold it to."
+ },
+ {
+  "stop": 3,
+  "key": "s03",
+  "title": "Simple menus",
+  "text": "The whole site sits under a few simple headings: Explore careers, Pathways, Try a VWE, Plan my future, Partners and jobs, and Teachers and partners. Each one opens a panel of links. The navigation is familiar and predictable, so every visitor can find their way."
+ },
+ {
+  "stop": 4,
+  "key": "s04",
+  "title": "Start here, in plain English",
+  "text": "Near the top of the home page, six I-want-to tiles and a four-step How it works strip point each visitor to the right place. And if someone meets a term they don't know, like VWE, G W O or T Level, there's a jargon buster. Visitors who don't know the jargon can still get where they need to go."
+ },
+ {
+  "stop": 5,
+  "key": "s05",
+  "title": "Accessibility for every learner",
+  "text": "The round accessibility button changes text size, background tint and spacing, and can reduce motion. The VWE player adds read aloud, B S L and captions. This is designed for learners with S E N D, and for anyone who finds standard web pages hard to read."
+ },
+ {
+  "stop": 6,
+  "key": "s06",
+  "title": "The energy hubs",
+  "text": "Here are the energy hubs: Great Yarmouth, Lowestoft, Sizewell C, Freeport East and the Norfolk grid. Each card shows the type of energy, the industry links, the nearest CETEC college, and the VWEs set at that hub. So learners can see real jobs on their own coastline."
+ },
+ {
+  "stop": 7,
+  "key": "s07",
+  "title": "Hubs, colleges and universities map",
+  "text": "This interactive map shows the hubs alongside the four CETEC colleges and nearby universities. You can toggle each layer, and select a marker for details. It shows learners where they can train close to home, for the jobs on their doorstep."
+ },
+ {
+  "stop": 8,
+  "key": "s08",
+  "title": "Survey to switch-on",
+  "text": "Here are the six stages of an energy project, from survey and consent, through design, manufacture, build and commissioning, to decades of operation. Each stage lists the roles involved. It shows that the work lasts decades, not just the length of the build."
+ },
+ {
+  "stop": 9,
+  "key": "s09",
+  "title": "A route for every learner",
+  "text": "Step-by-step routes for school pupils, college students, university students, adults, parents and teachers, each with links and tick-boxes. Every audience gets a clear next step, rather than a wall of information."
+ },
+ {
+  "stop": 10,
+  "key": "s10",
+  "title": "Career finder",
+  "text": "Five quick questions match a learner to clean energy job families, then link straight to the matching VWE. It turns 'I don't know what I want to do' into three concrete options, in about two minutes."
+ },
+ {
+  "stop": 11,
+  "key": "s11",
+  "title": "Explore a hundred careers",
+  "text": "Every clean energy role, in building and in operations, is here, each with an illustration, a description, the routes in, and a VWE to try. It's one place to compare careers across the whole sector, filtered by how the learner wants to start."
+ },
+ {
+  "stop": 12,
+  "key": "s12",
+  "title": "The VWE library",
+  "text": "This is the VWE library: twelve five-day virtual work experiences, six to build and install, and six to operate and maintain. Each one maps to apprenticeships and T Levels. It's the core of the programme, work experience in every postcode."
+ },
+ {
+  "stop": 13,
+  "key": "s13",
+  "title": "Skills pathways for each VWE",
+  "text": "Each VWE opens into tabs: the five days, the skills pathway, the roles, the curriculum and Gatsby links, and the formats. The skills pathway proves that every VWE leads to a recognised route into the industry."
+ },
+ {
+  "stop": 14,
+  "key": "s14",
+  "title": "A day at the port",
+  "text": "Here's a day inside a VWE. Day two of VWE one: the learner reads the port map, meets the lift supervisor, takes a safety quiz, makes four decisions, handles a wind curveball, writes a shift log and earns a certificate. It shows exactly what a learner experiences."
+ },
+ {
+  "stop": 15,
+  "key": "s15",
+  "title": "One VWE, two jobs",
+  "text": "The evidence report turns the learner's choices into a competency profile, and matches them to a build role and an operations role. It replaces a CV with evidence of what the learner can actually do, which is fairer for young people with little work history."
+ },
+ {
+  "stop": 16,
+  "key": "s16",
+  "title": "Lifestyle calculator",
+  "text": "Pick a clean energy job, choose where and how you'd like to live, and see take-home pay, monthly costs and how pay grows. It makes pay real, for learners and for parents."
+ },
+ {
+  "stop": 17,
+  "key": "s17",
+  "title": "My career plan",
+  "text": "The career plan is a selector and progress tracker. It remembers what a learner shortlists, tries and applies for, and always shows the next step. So every learner keeps moving."
+ },
+ {
+  "stop": 18,
+  "key": "s18",
+  "title": "Role tasters and job fit",
+  "text": "Every role has a three-minute, game-style taster, with X P, badges and a job-fit score. It helps learners discover roles they had never heard of, and see which ones suit them best."
+ },
+ {
+  "stop": 19,
+  "key": "s19",
+  "title": "Career pathways",
+  "text": "Every job family is laid out as a five-step ladder, with the level, the pay and the time at each stage, plus crossover routes between build and operations. It shows how far a first job can lead."
+ },
+ {
+  "stop": 20,
+  "key": "s20",
+  "title": "From lesson to VWE",
+  "text": "A teacher chooses a subject and a topic, such as electrolysis or the national grid, and sees the clean energy careers that use it, and the VWE to start. That's Gatsby Benchmark four, in every subject."
+ },
+ {
+  "stop": 21,
+  "key": "s21",
+  "title": "Project simulation",
+  "text": "This is an illustrated simulation of an energy project, from today's site to switch-on, with the jobs at each stage and links to each hub. It shows learners the real projects happening in their own town."
+ },
+ {
+  "stop": 22,
+  "key": "s22",
+  "title": "AI career coach",
+  "text": "The coach is a chat assistant that knows every role, VWE, salary and sample job on the site. It never asks for personal details. It gives every learner one-to-one guidance, at any time."
+ },
+ {
+  "stop": 23,
+  "key": "s23",
+  "title": "Partners and jobs",
+  "text": "Profiles of Sizewell C, E D F, Freeport East, EastWind and E E G R, with their spotlight jobs, a jobs board fed by vacancy A P Is, and help for every kind of job seeker. Every VWE leads to a real vacancy."
+ },
+ {
+  "stop": 24,
+  "key": "s24",
+  "title": "Impact reports",
+  "text": "From here, the CETEC colleges, industry partners and the steering group open their dashboards in one click: reach, completions, placements, applications, NEET outcomes and reach by area. One shared evidence base for the whole partnership."
+ },
+ {
+  "stop": 25,
+  "key": "s25",
+  "title": "Government reporting",
+  "text": "Ready-made returns: social value, CITB Employment and Skills Plan KPIs, Gatsby evidence, NEET outcomes and Local Skills Improvement Plan evidence. Partners collect the data once, and report it many times."
+ },
+ {
+  "stop": 26,
+  "key": "s26",
+  "title": "Talent pipeline",
+  "text": "The talent pipeline shows the stages, ready learners against hiring need, interest by role and area, and an opt-in talent pool. It helps employers plan recruitment years ahead, with consent built in."
+ },
+ {
+  "stop": 27,
+  "key": "s27",
+  "title": "Watch the films",
+  "text": "Finally, the films: the Developing Experts product film, and the employer and learner testimonial film. Both open on YouTube. They're a quick way to explain VWE to anyone, before they try one. That's the tour. Thank you for watching."
+ }
+]

@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind the Collection: Developing Experts virtual work experience for Royal Collection Trust</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Lato:wght@400;700&display=swap">
+<style>
+:root{
+  --claret:#8A2A2B; --red:#A52426; --ink:#333333; --ink-strong:#222222; --muted:#666666;
+  --rule:#D6D6D6; --panel:#F8F8F8; --blush:#F4EBEB; --white:#FFFFFF;
+  --serif:"Goudy Old Style","GoudyOldStyleRoman","Sorts Mill Goudy",Georgia,serif;
+  --sans:"Gill Sans Nova","Gill Sans","Gill Sans MT","Lato","Lucida Grande",Verdana,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55}
+a{color:var(--claret)} a:hover{color:var(--red)}
+h1,h2{font-family:var(--serif);font-weight:400;text-transform:uppercase;letter-spacing:.02em;color:var(--claret);line-height:1.12;margin:0}
+h1{font-size:clamp(34px,5vw,54px)}
+h2{font-size:clamp(28px,3.4vw,38px)}
+h3{font-family:var(--sans);font-weight:700;color:var(--red);font-size:21px;line-height:1.25;margin:0}
+h4{font-family:var(--sans);font-weight:700;color:var(--ink-strong);font-size:17px;line-height:1.3;margin:0}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:64px 0;border-top:1px solid var(--rule)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.lede{font-size:20px;max-width:70ch}
+.small{font-size:15px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;text-transform:uppercase;letter-spacing:.08em;font-size:15px;font-weight:700;text-decoration:none;border:2px solid var(--claret);cursor:pointer;font-family:var(--sans)}
+.btn-fill{background:var(--claret);color:#fff} .btn-fill:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn-line{background:#fff;color:var(--claret)} .btn-line:hover{background:var(--blush);color:var(--claret)}
+.card{border:1px solid var(--rule);background:#fff;padding:24px;display:flex;flex-direction:column;gap:10px}
+.panel{background:var(--panel)}
+.tag{align-self:flex-start;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--claret);border:1px solid var(--claret);padding:3px 9px}
+.ph{background:#FFF3D6;color:#5A4100;padding:0 4px;font-weight:700}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.cols{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+
+.video{position:relative;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-decoration:none;color:#fff;background:repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 18px),var(--ink-strong)}
+.video .play{width:84px;height:84px;border-radius:50%;background:var(--claret);display:grid;place-items:center;transition:transform .15s}
+.video:hover .play{transform:scale(1.08);background:var(--red)}
+.video .vlabel{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.video:hover{color:#fff}
+/* build process */
+.bphotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.bfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid var(--rule);background:#fff}
+.bfacts div{padding:20px 22px;border-right:1px solid var(--rule)}
+.bfacts div:last-child{border-right:0}
+.bfacts b{display:block;font-family:var(--serif);font-weight:400;font-size:38px;color:var(--claret);line-height:1}
+.bfacts span{font-size:15px;color:var(--muted)}
+.blegend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--ink)}
+.blegend i{display:inline-block;width:14px;height:10px;margin-right:6px;vertical-align:middle}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px;margin:0;padding:0}
+.strip li{list-style:none}
+.strip button{width:100%;height:100%;min-height:124px;text-align:left;display:flex;flex-direction:column;gap:6px;padding:10px 12px 12px;background:#fff;border:1px solid var(--rule);font:inherit;color:var(--ink);cursor:pointer}
+.strip button[aria-pressed="true"]{border:2px solid var(--claret);box-shadow:0 0 0 1px var(--claret)}
+.strip .band{display:block;height:6px}
+.strip .when{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.strip .pt{font-weight:700;font-size:16px;line-height:1.25}
+.strip .meta2{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-top:auto}
+.gate{display:inline-flex;align-items:center;gap:4px;background:#FFF3D6;color:#5A4100;font-size:12px;font-weight:700;padding:2px 7px}
+.phase-box{border:1px solid var(--rule);background:#fff;padding:24px;display:flex;flex-direction:column;gap:10px}
+.steplist{margin:0;padding:0}
+.steplist li{list-style:none;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:11px 0;border-top:1px solid var(--rule)}
+.steplist li.isgate{background:#FFF8E6;margin:0 -12px;padding-left:12px;padding-right:12px}
+.stick{flex:none;width:22px;height:22px;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;border:2px solid #BDBDBD;background:#fff}
+.stick.done{background:#2F6B3A;border-color:#2F6B3A}
+.stick.now{border-color:var(--claret)}
+.stext{flex:1 1 260px}
+.who{font-size:12px;font-weight:700;padding:2px 8px}
+.who.de{background:var(--blush);color:var(--claret)}
+.who.pt{background:#E9E9E9;color:#333}
+.who.both{background:#FFF3D6;color:#5A4100}
+.track{border:1px solid var(--rule);background:#fff;padding:24px;display:flex;flex-direction:column;gap:16px}
+.track select{min-height:44px;font:inherit;font-size:16px;padding:8px 12px;border:1px solid #8A8A8A;background:#fff;color:var(--ink);max-width:100%}
+.ring{flex:none;width:84px;height:84px;border-radius:50%;display:grid;place-items:center}
+.ring span{width:62px;height:62px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:22px;color:var(--claret)}
+.plist{margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:4px 20px}
+.plist li{list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:15px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.gantt{display:grid;grid-template-columns:minmax(150px,220px) repeat(14,minmax(28px,1fr));gap:4px 3px;align-items:center;font-size:14px;min-width:700px}
+.gantt .wk{font-size:12px;font-weight:700;color:var(--muted);text-align:center}
+.gantt .bar2{height:20px}
+.outputs ul{margin:0;padding-left:20px;font-size:16px;display:flex;flex-direction:column;gap:6px}
+@media (max-width:700px){.bfacts div{border-right:0;border-bottom:1px solid var(--rule)}}
+/* history curriculum */
+.years{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px}
+.year{border:1px solid var(--rule);background:#fff;display:flex;flex-direction:column}
+.year h4{padding:10px 12px;background:var(--ink-strong);color:#fff;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.year ul{margin:0;padding:8px;display:flex;flex-direction:column;gap:6px}
+.year li{list-style:none}
+.unit{width:100%;text-align:left;min-height:44px;padding:8px 10px;font:inherit;font-size:15px;border:1px solid var(--rule);background:#fff;color:#666;cursor:default}
+.unit.rc{border-color:var(--claret);color:var(--ink);font-weight:700;cursor:pointer;background:var(--blush)}
+.unit.rc[aria-pressed="true"]{background:var(--claret);color:#fff}
+.unit .crown{font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;font-weight:700;color:var(--claret)}
+.unit.rc[aria-pressed="true"] .crown{color:#FFD9D9}
+.hlink{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));border:1px solid var(--rule);background:#fff}
+.hlink > div{padding:20px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:6px}
+.hlink > div:last-child{border-right:0}
+.hlink .n{font-family:var(--serif);font-size:28px;color:var(--claret);line-height:1}
+@media (max-width:700px){.hlink > div{border-right:0;border-bottom:1px solid var(--rule)}}
+/* photo placeholder */
+.photo{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:14px;
+  background:repeating-linear-gradient(45deg,#EFEFEF 0 10px,#F7F7F7 10px 20px);border:1px dashed #9A9A9A;color:#555}
+.photo b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#444}
+.photo span{font-size:13px;line-height:1.35;max-width:36ch}
+.r169{aspect-ratio:16/9} .r43{aspect-ratio:4/3} .r32{aspect-ratio:3/2}
+
+/* banner + header */
+.proposal{background:var(--ink-strong);color:#fff;font-size:14px}
+.proposal .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+.proposal b{letter-spacing:.08em;text-transform:uppercase}
+header.site{border-bottom:1px solid var(--rule);background:#fff;position:sticky;top:0;z-index:20}
+header.site .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 32px;padding-top:14px;padding-bottom:14px}
+.mark{display:flex;flex-direction:column;text-decoration:none;line-height:1.1}
+.mark span:first-child{font-family:var(--serif);text-transform:uppercase;font-size:26px;color:var(--claret);letter-spacing:.04em}
+.mark span:last-child{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav.main{display:flex;flex-wrap:wrap;gap:0 22px;flex:1 1 480px;justify-content:flex-end}
+nav.main a{color:var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font-size:14px;font-weight:700;padding:10px 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--claret);color:var(--claret)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));border-bottom:1px solid var(--rule)}
+.hero .copy{padding:60px 48px 60px max(24px,calc((100vw - 1200px)/2 + 24px));display:flex;flex-direction:column;gap:22px;justify-content:center}
+.hero .photo{min-height:440px;border-width:0 0 0 1px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:1200px;margin:0 auto}
+.facts div{padding:26px 24px;border-right:1px solid var(--rule)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:40px;color:var(--claret);line-height:1}
+.facts span{display:block;font-size:16px;margin-top:8px}
+.facts small{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+
+/* how it works */
+.anatomy{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));border:1px solid var(--rule)}
+.anatomy > div{padding:22px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:8px}
+.anatomy > div:last-child{border-right:0}
+.anatomy .n{font-family:var(--serif);font-size:34px;color:var(--claret);line-height:1}
+.versions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.versions div{border-top:4px solid var(--claret);background:#fff;border-left:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px;display:flex;flex-direction:column;gap:6px}
+
+/* VWE overview + detail */
+.vwe-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px}
+.vwe-card{display:flex;flex-direction:column;border:1px solid var(--rule);background:#fff;text-align:left;padding:0;font:inherit;color:inherit;cursor:pointer}
+.vwe-card .photo{border-width:0 0 1px 0}
+.vwe-card .t{padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.vwe-card[aria-pressed="true"]{border:2px solid var(--claret);box-shadow:0 0 0 1px var(--claret)}
+.vwe-card .code{font-family:var(--serif);font-size:22px;color:var(--claret);line-height:1}
+.detail{border:1px solid var(--rule);background:#fff;margin-top:22px}
+.detail-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.detail-head .photo{border-width:0 1px 1px 0;min-height:260px;aspect-ratio:auto}
+.detail-head .txt{padding:28px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--rule)}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:0}
+.meta dt{font-weight:700} .meta dd{margin:0;color:var(--muted)}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));border-bottom:1px solid var(--rule)}
+.days li{list-style:none;padding:18px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:6px}
+.days li:last-child{border-right:0}
+.days .d{font-family:var(--serif);text-transform:uppercase;color:var(--claret);font-size:20px}
+.roles{padding:28px;display:flex;flex-direction:column;gap:16px}
+.role-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px}
+.role{border:1px solid var(--rule);display:flex;flex-direction:column;background:#fff}
+.role .photo{border-width:0 0 1px 0}
+.role .body{padding:14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.role .num{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.role .skill{font-size:14px;color:var(--ink)}
+.role .route{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:auto}
+
+/* tabs/pills */
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{min-height:44px;padding:9px 15px;background:#fff;border:1px solid var(--rule);font:inherit;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);cursor:pointer}
+.pills button[aria-pressed="true"]{background:var(--claret);border-color:var(--claret);color:#fff}
+
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:0;border:1px solid var(--rule)}
+.pipe div{padding:20px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:6px;background:#fff}
+.pipe div:last-child{border-right:0}
+.pipe .n{font-family:var(--serif);font-size:30px;color:var(--claret);line-height:1}
+
+/* dashboard */
+.dash{border:1px solid var(--rule);background:var(--panel)}
+.dash-top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--rule);background:#fff}
+.dash-top label{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.dash-top select{min-height:44px;font:inherit;font-size:16px;padding:8px 12px;border:1px solid #8A8A8A;background:#fff;color:var(--ink)}
+.illus{display:inline-block;background:#FFF3D6;color:#5A4100;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px}
+.dash-body{padding:24px;display:flex;flex-direction:column;gap:22px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi{background:#fff;border:1px solid var(--rule);padding:16px;display:flex;flex-direction:column;gap:4px}
+.kpi b{font-family:var(--serif);font-weight:400;font-size:36px;color:var(--claret);line-height:1}
+.kpi span{font-size:14px;color:var(--muted)}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.chart{background:#fff;border:1px solid var(--rule);padding:20px;display:flex;flex-direction:column;gap:14px}
+.chart h4{font-size:16px}
+.bars{display:grid;gap:9px}
+.bar{display:grid;grid-template-columns:minmax(110px,190px) 1fr 48px;gap:12px;align-items:center;font-size:15px}
+.bar .track{height:14px;background:var(--panel);border:1px solid var(--rule)}
+.bar .fill{display:block;height:100%;background:var(--claret)}
+.bar .fill.pre{background:#B9B9B9}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:10px;margin-right:6px;vertical-align:middle}
+.funnel{display:grid;gap:6px}
+.funnel div{display:flex;justify-content:space-between;gap:10px;background:var(--claret);color:#fff;padding:10px 14px;font-size:15px;margin:0 auto;width:100%}
+table.gatsby{width:100%;border-collapse:collapse;font-size:15px}
+table.gatsby th,table.gatsby td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.gatsby th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.tick{color:#2F6B3A;font-weight:700}
+.reports{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+
+/* try */
+.task{border:1px solid var(--rule);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.task .side{background:var(--ink-strong);color:#E9E9E9;padding:32px;display:flex;flex-direction:column;gap:14px}
+.task .side h3{color:#fff}
+.task .main{padding:32px;display:flex;flex-direction:column;gap:16px}
+.steps{display:flex;gap:6px} .steps span{height:6px;flex:1;background:var(--rule)} .steps span.on{background:var(--claret)}
+.opts{display:grid;gap:10px}
+.opts button{text-align:left;min-height:54px;padding:14px 16px;border:1px solid var(--rule);background:#fff;font:inherit;font-size:17px;cursor:pointer;color:var(--ink)}
+.opts button:hover{border-color:var(--claret)}
+.opts button.right{border:2px solid #2F6B3A;background:#EEF6EF}
+.opts button.wrong{border:2px solid var(--red);background:var(--blush)}
+.feedback{padding:14px 16px;background:var(--panel);font-size:16px}
+
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}
+.phase ul{margin:0;padding-left:20px;font-size:16px}
+
+footer{background:var(--ink-strong);color:#D0D0D0;font-size:14px}
+footer .wrap{padding-top:36px;padding-bottom:36px;display:flex;flex-direction:column;gap:14px}
+footer a{color:#fff}
+footer ol{margin:0;padding-left:20px;columns:2 320px;column-gap:32px}
+@media (max-width:700px){
+  .facts div,.anatomy > div,.days li,.pipe div{border-right:0;border-bottom:1px solid var(--rule)}
+  section{padding:48px 0}
+  header.site{position:static}
+  nav.main{justify-content:flex-start;gap:0 18px}
+  .hero .copy{padding:40px 24px}
+  .hero .photo{min-height:240px;border-width:1px 0 0 0}
+  .detail-head .photo{border-width:0 0 1px 0}
+  .bar{grid-template-columns:minmax(90px,130px) 1fr 44px}
+}
+</style>
+</head>
+<body>
+
+<div class="proposal" role="note">
+  <div class="wrap"><span><b>Proposal</b> · From Developing Experts for Royal Collection Trust</span><span>Concept mock-up, not an official Royal Collection Trust page. Partnership not yet agreed.</span></div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="#top"><span>Behind the Collection</span><span>Virtual work experience by Developing Experts</span></a>
+    <nav class="main" aria-label="Sections">
+      <a href="#how">How a VWE works</a>
+      <a href="#films">Films</a>
+      <a href="#vwes">The four VWEs</a>
+      <a href="#history">History curriculum</a>
+      <a href="#skills">Skills pipeline</a>
+      <a href="#impact">Impact data</a>
+      <a href="#build">How VWEs are made</a>
+      <a href="#pilot">Pilot</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="copy">
+    <p class="eyebrow">Skills delivery · Access · Impact reporting</p>
+    <h1>Building the skills that care for the Royal Collection</h1>
+    <p class="lede">Four Developing Experts virtual work experiences (VWEs) bring 32 Royal Collection careers into classrooms, colleges and communities. Every VWE builds practical skills, produces an evidence report for each learner and feeds termly impact data back to Royal Collection Trust.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn btn-fill" href="#vwes">Explore the four VWEs</a>
+      <a class="btn btn-line" href="#impact">See the impact data</a>
+    </div>
+  </div>
+  <div class="photo" role="img" aria-label="Photo placeholder for the hero image">
+    <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z M12 10a4 4 0 1 0 0 8a4 4 0 1 0 0-8" fill="none" stroke="#555" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <b>Hero photo</b>
+    <span>A young apprentice and a senior conservator at a workbench in a Royal Collection workroom, both looking at the object, natural light</span>
+  </div>
+</div>
+
+<div style="border-bottom:1px solid var(--rule)">
+<div class="facts" aria-label="Context">
+  <div><b>50,000</b><span>school children visit Windsor Castle in an average year</span><small>Pug Yard Learning Centre opening coverage</small></div>
+  <div><b>30%+</b><span>pupil premium: the priority threshold for RCT’s Access Scheme</span><small>RCT Access Scheme</small></div>
+  <div><b>6</b><span>apprentices the Queen’s Bindery scheme set out to train before its 2020 suspension</span><small>Heritage Crafts</small></div>
+  <div><b>32</b><span>job roles across four VWEs, 8 in each</span><small>This proposal</small></div>
+</div>
+</div>
+
+<section id="why" aria-labelledby="why-h">
+  <div class="wrap stack">
+    <p class="eyebrow">What RCT needs</p>
+    <h2 id="why-h">Skills delivery that reaches further and proves its impact</h2>
+    <div class="cols">
+      <div class="card"><span class="tag">Specialist skills</span><h3>Fill specialist roles</h3><p class="small">The Royal Bindery, founded in 1770, and RCT’s conservation teams depend on rare hand skills. The Queen’s Bindery Apprenticeship Scheme was suspended in 2020, three years early.</p><p><b>VWEs</b> introduce learners to each role early and give recruiters an evidence report to judge applicants by.</p></div>
+      <div class="card"><span class="tag">Access</span><h3>Reach pupils who face barriers</h3><p class="small">The Access Scheme and outreach in Windsor, Slough, Maidenhead and Staines already target pupils who face distance and cost barriers.</p><p><b>VWEs</b> run in any classroom, all year, free to Access Scheme schools. A visit becomes the finale, not the only contact.</p></div>
+      <div class="card"><span class="tag">Evidence</span><h3>Show sponsors the return</h3><p class="small">RCT receives no public funding, and its net income fell by more than £10m in the latest accounts. Sponsors and trustees need evidence.</p><p><b>Impact reports</b> show reach, skills gained and progression each term, by VWE, area and group.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="how-h" class="panel">
+  <div class="wrap stack">
+    <p class="eyebrow">How a Developing Experts VWE works</p>
+    <h2 id="how-h">One VWE, five days, eight job roles</h2>
+    <p class="lede">Each VWE is set in one part of the Collection. Over five days, learners meet eight people who work there, try their skills and finish a real brief.</p>
+    <div class="anatomy">
+      <div><span class="n">5</span><h4>days of tasks</h4><span class="small">Each day spotlights roles, a skill drill and a science or history link.</span></div>
+      <div><span class="n">8</span><h4>job roles</h4><span class="small">Role-model films and a day-in-the-life with each person.</span></div>
+      <div><span class="n">360°</span><h4>workroom tours</h4><span class="small">Filmed on site, so learners see the real workroom without travelling there.</span></div>
+      <div><span class="n">1</span><h4>evidence report</h4><span class="small">A certificate and a skills record for each learner, ready for applications.</span></div>
+      <div><span class="n">∞</span><h4>data, every term</h4><span class="small">Anonymised reach, skills and progression data, shown on RCT’s dashboard.</span></div>
+    </div>
+    <div class="versions">
+      <div><span class="tag">KS3 · 30 minutes</span><h4>Career taster</h4><span class="small">One lesson that introduces all eight roles.</span></div>
+      <div><span class="tag">KS4 · 5 days</span><h4>Virtual work experience</h4><span class="small">The full week, run in class or at home, with linked science lessons.</span></div>
+      <div><span class="tag">KS5 and college</span><h4>Technical edition</h4><span class="small">Tasks aligned to apprenticeship standards, with portfolio evidence.</span></div>
+      <div><span class="tag">Adults and communities</span><h4>Career changer edition</h4><span class="small">Short sessions for returners, veterans and community groups.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="films" aria-labelledby="films-h">
+  <div class="wrap stack">
+    <p class="eyebrow">See it in action</p>
+    <h2 id="films-h">Developing Experts films</h2>
+    <div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))">
+      <figure class="card" style="margin:0;padding:0">
+        <a class="video" href="https://www.youtube.com/watch?v=Q6ov61usjRM" target="_blank" rel="noopener" aria-label="Play the product film on YouTube (opens in a new tab)"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span><span class="vlabel">Play on YouTube</span></a>
+        <figcaption style="padding:18px 20px;display:flex;flex-direction:column;gap:6px"><h4>Product film</h4><span class="small">How Developing Experts virtual work experience works for learners, teachers and partners.</span></figcaption>
+      </figure>
+      <figure class="card" style="margin:0;padding:0">
+        <a class="video" href="https://www.youtube.com/watch?v=dR9lnEoreoE" target="_blank" rel="noopener" aria-label="Play the testimonial film on YouTube (opens in a new tab)"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span><span class="vlabel">Play on YouTube</span></a>
+        <figcaption style="padding:18px 20px;display:flex;flex-direction:column;gap:6px"><h4>Testimonial film</h4><span class="small">Employers, teachers and learners on what virtual work experience changed for them.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="vwes" aria-labelledby="vwe-h">
+  <div class="wrap">
+    <p class="eyebrow">The VWE library</p>
+    <h2 id="vwe-h" style="margin:10px 0 12px">Four VWEs, thirty-two job roles</h2>
+    <p class="lede" style="margin-bottom:22px">Choose a VWE to see its week and the eight job roles it covers. Each photo placeholder gives a brief for the film and photo shoot.</p>
+    <div class="vwe-cards" id="vwe-cards" role="group" aria-label="Choose a VWE"></div>
+    <div class="detail" id="vwe-detail" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="try" aria-labelledby="try-h" class="panel">
+  <div class="wrap stack">
+    <p class="eyebrow">Inside a VWE</p>
+    <h2 id="try-h">Try the Day 1 checkpoint: the Royal Bindery</h2>
+    <div class="task">
+      <div class="side">
+        <span class="tag" style="color:#fff;border-color:#fff">VWE 1 · KS4</span>
+        <h3>Books, Bindery and Archives</h3>
+        <p>The Royal Bindery was founded by George III in 1770. Its team conserves books, manuscripts and archives across the Royal Collection and makes new hand bindings for the Royal Household.</p>
+        <p class="small" style="color:#C9C9C9">In the full VWE, each question opens a film with one of the eight roles. Answers feed the learner’s skills record and the impact data.</p>
+      </div>
+      <div class="main">
+        <div class="steps" id="q-steps" aria-hidden="true"></div>
+        <p class="small" id="q-pos"></p>
+        <h3 id="q-text" style="color:var(--ink-strong)"></h3>
+        <div class="opts" id="q-opts"></div>
+        <div id="q-fb" aria-live="polite"></div>
+        <div><button class="btn btn-fill" id="q-next" type="button" hidden>Next</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="history" aria-labelledby="hist-h" class="panel">
+  <div class="wrap stack">
+    <p class="eyebrow">Developing Experts history curriculum · KS1 and KS2</p>
+    <h2 id="hist-h">History lessons that lead to the Collection</h2>
+    <p class="lede">Developing Experts’ primary history curriculum has 18 units across Years 1 to 6, fully aligned to the National Curriculum. Every lesson starts with an enquiry question, key learning comes back again in later units, and every unit includes career links. Seven units connect directly to the Royal Collection, so pupils meet its people and places long before they reach a VWE.</p>
+    <div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+      <div class="card"><span class="tag">In every unit</span><span class="small" style="color:var(--ink)">Lesson plans, presentations, animations, key words, differentiated handouts and a knowledge organiser</span></div>
+      <div class="card"><span class="tag">Assessment</span><span class="small" style="color:var(--ink)">Formative questions, end-of-lesson quizzes, and an open-ended summative task in lesson 6</span></div>
+      <div class="card"><span class="tag">Careers</span><span class="small" style="color:var(--ink)">Career links in every unit, which can feature Royal Collection roles from the VWEs</span></div>
+      <div class="card"><span class="tag">Availability</span><span class="small" style="color:var(--ink)">The full curriculum launches in late 2026. Castles is one of three free sample units.</span></div>
+    </div>
+
+    <h3 style="margin-top:8px">The 18 units: where the Royal Collection fits</h3>
+    <p class="small">Units marked “Royal Collection link” connect to RCT’s sites, workshops and VWE roles. Select one to see how.</p>
+    <div class="years" id="h-years"></div>
+    <div class="card" id="h-detail" aria-live="polite" style="border-color:var(--claret)"></div>
+
+    <h3 style="margin-top:8px">How it joins up</h3>
+    <div class="hlink">
+      <div><span class="n">KS1–2</span><h4>History unit</h4><span class="small">For example, Year 2 Castles, taught in class with Developing Experts lessons.</span></div>
+      <div><span class="n">+</span><h4>RCT workshop</h4><span class="small">The Castles workshop, online or with a Learning Officer in school.</span></div>
+      <div><span class="n">→</span><h4>Career link</h4><span class="small">Meet a furniture conservator or a clock conservator from VWE 2.</span></div>
+      <div><span class="n">KS3</span><h4>Taster</h4><span class="small">A 30-minute taster for the role.</span></div>
+      <div><span class="n">KS4</span><h4>VWE</h4><span class="small">The five-day work experience, then a visit.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" aria-labelledby="sk-h">
+  <div class="wrap stack">
+    <p class="eyebrow">Supporting RCT’s skills delivery</p>
+    <h2 id="sk-h">From first taster to first job</h2>
+    <p class="lede">The VWEs widen the pool of people who know these careers exist and can show they are ready. Every step is tracked, so RCT can see where its future applicants come from.</p>
+    <div class="pipe">
+      <div><span class="n">1</span><h4>Discover</h4><span class="small">KS3 tasters in class, after your online and outreach workshops.</span></div>
+      <div><span class="n">2</span><h4>Experience</h4><span class="small">A five-day VWE in one area of the Collection.</span></div>
+      <div><span class="n">3</span><h4>Evidence</h4><span class="small">A skills record and an evidence report for each learner.</span></div>
+      <div><span class="n">4</span><h4>On site</h4><span class="small">Taster days at Pug Yard and the King’s Galleries for learners who complete a VWE.</span></div>
+      <div><span class="n">5</span><h4>Apply</h4><span class="small">Apprenticeships, internships, summer jobs and traineeships with RCT and partners.</span></div>
+    </div>
+    <div class="cols">
+      <div class="card"><span class="tag">For RCT recruiters</span><h4>A ready pool of applicants</h4><p class="small">Learners can opt in to hear about RCT vacancies. Recruiters see evidence reports with consent, never raw pupil data.</p></div>
+      <div class="card"><span class="tag">For the Learning Team</span><h4>More from each session</h4><p class="small">Online and outreach workshops lead into a VWE, so one contact becomes a term of learning.</p></div>
+      <div class="card"><span class="tag">For partners</span><h4>A case to restart apprenticeships</h4><p class="small">Pipeline data gives the partners who backed the Queen’s Bindery scheme evidence that applicants are coming through.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" aria-labelledby="im-h" class="panel">
+  <div class="wrap stack">
+    <p class="eyebrow">Data impact reporting</p>
+    <h2 id="im-h">RCT’s impact dashboard</h2>
+    <p class="lede">A private dashboard for RCT, sponsors and trustees. Data is anonymised and aggregated, refreshed every term, and can be filtered by VWE.</p>
+    <div class="dash">
+      <div class="dash-top">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><label for="dash-vwe">Show</label><select id="dash-vwe"></select></div>
+        <span class="illus">Illustrative figures for the mock-up only</span>
+      </div>
+      <div class="dash-body">
+        <div class="kpis" id="kpis"></div>
+        <div class="dash-grid">
+          <div class="chart"><h4>1. Reach: who took part</h4><div class="pills" id="reach-tabs" role="group" aria-label="Reach breakdown"></div><div class="bars" id="reach-bars"></div><p class="small" id="reach-note"></p></div>
+          <div class="chart"><h4>2. Skills: before and after the VWE</h4><div class="legend"><span><i style="background:#B9B9B9"></i>Before</span><span><i style="background:var(--claret)"></i>After</span></div><div class="bars" id="skill-bars"></div><p class="small">Share of learners who agree, from start and end surveys.</p></div>
+          <div class="chart"><h4>3. Interest: top job roles chosen</h4><div class="bars" id="role-bars"></div><p class="small">Learners’ first-choice role at the end of the VWE.</p></div>
+          <div class="chart"><h4>4. Progression: the skills pipeline</h4><div class="funnel" id="funnel"></div><p class="small">Learners tracked with consent, from starting a VWE to applying.</p></div>
+        </div>
+        <div class="chart">
+          <h4>5. Schools: Gatsby Benchmark evidence</h4>
+          <div style="overflow-x:auto"><table class="gatsby">
+            <thead><tr><th>Benchmark</th><th>How the VWE supports it</th><th>Evidence produced</th></tr></thead>
+            <tbody>
+              <tr><td>4. Linking curriculum learning to careers</td><td>Science and history lessons linked to every role</td><td class="tick">Lesson completion log</td></tr>
+              <tr><td>5. Encounters with employers</td><td>Role-model films and live Q&amp;A with RCT staff</td><td class="tick">Encounter record per pupil</td></tr>
+              <tr><td>6. Experiences of workplaces</td><td>Five days of tasks in a virtual Royal Collection workroom</td><td class="tick">Certificate and evidence report</td></tr>
+              <tr><td>3. Addressing individual needs</td><td>Adjustable display, text-to-speech, offline packs</td><td class="tick">Reach by SEND and background</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="reports">
+          <div class="card"><span class="tag">Termly</span><h4>Sponsor impact report</h4><p class="small">A PDF report for each sponsored VWE: reach, skills gained, progression and learner quotes.</p></div>
+          <div class="card"><span class="tag">Annual</span><h4>Trustee summary</h4><p class="small">Year-on-year trends set against RCT’s access and learning aims, ready for the annual review.</p></div>
+          <div class="card"><span class="tag">Live</span><h4>Learning Team view</h4><p class="small">Which schools are mid-VWE, who to invite on site, and which areas still need reaching.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="build" aria-labelledby="build-h">
+  <div class="wrap stack">
+    <p class="eyebrow">Build and develop · for partners</p>
+    <h2 id="build-h">How VWEs are made</h2>
+    <p class="lede">Every five-day VWE goes through the same ten phases, from choosing the roles to publishing, with approval gates where Royal Collection Trust signs off. It takes about 14 weeks from first meeting to launch.</p>
+    <div class="bphotos">
+      <div class="photo r169" role="img" aria-label="Photo placeholder: filming on site"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z M12 10a4 4 0 1 0 0 8a4 4 0 1 0 0-8" fill="none" stroke="#555" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Filming on site</b><span>A small film crew interviewing a conservator in a Royal Collection workroom</span></div>
+      <div class="photo r169" role="img" aria-label="Photo placeholder: script and storyboard"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z M12 10a4 4 0 1 0 0 8a4 4 0 1 0 0-8" fill="none" stroke="#555" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Script and storyboard</b><span>The Day 1 story laid out scene by scene</span></div>
+      <div class="photo r169" role="img" aria-label="Photo placeholder: partner sign-off"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z M12 10a4 4 0 1 0 0 8a4 4 0 1 0 0-8" fill="none" stroke="#555" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Partner sign-off</b><span>An RCT colleague reviewing footage with the producer</span></div>
+    </div>
+    <div class="bfacts" id="b-facts"></div>
+
+    <h3 style="margin-top:12px">The production process</h3>
+    <div class="blegend"><span><span class="gate">Gate</span> Approval gate</span><span><i style="background:#2F6B3A"></i>Done</span><span><i style="background:var(--claret)"></i>In progress</span><span><i style="background:#C9C9C9"></i>To do</span></div>
+    <ol class="strip" id="b-strip"></ol>
+    <p class="small">Pick a phase to see its steps. Colours show progress for the programme selected below.</p>
+    <div class="phase-box" id="b-phase" aria-live="polite"></div>
+
+    <div class="track">
+      <h3>Track a programme</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><label for="b-prog" style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">Programme</label><select id="b-prog"></select><span class="illus">Illustrative status</span></div>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center"><div class="ring" id="b-ring"><span id="b-pct"></span></div><div style="display:flex;flex-direction:column;gap:4px;flex:1 1 300px"><b id="b-count"></b><span id="b-status" style="font-weight:700;color:var(--claret)"></span><span class="small" id="b-about"></span></div></div>
+      <ol class="plist" id="b-plist"></ol>
+    </div>
+
+    <h3 style="margin-top:12px">Who’s involved</h3>
+    <div class="cols">
+      <div class="card" style="background:var(--blush);border-color:var(--blush)"><h4>Developing Experts</h4><span class="small" style="color:var(--ink)">Producer, learning designers, film crew, editors and the AI Tutor team</span></div>
+      <div class="card panel"><h4>Royal Collection Trust teams</h4><span class="small" style="color:var(--ink)">Project lead, job holders from conservation, curatorial, library and visitor teams, brand and marketing, security, health and safety, and communications</span></div>
+      <div class="card" style="background:var(--claret);border-color:var(--claret)"><h4 style="color:#fff">Royal Collection Trust sign-off</h4><span class="small" style="color:#fff">Priorities, quality review and the final say on publishing</span></div>
+    </div>
+
+    <h3 style="margin-top:12px">Indicative timeline</h3>
+    <p class="small">Phases overlap. Royal Collection Trust and Developing Experts agree the real dates in phase 2.</p>
+    <div style="overflow-x:auto;border:1px solid var(--rule);background:#fff;padding:16px"><div class="gantt" id="b-gantt"></div></div>
+
+    <div class="cols outputs" style="margin-top:12px">
+      <div class="card"><h3>What one five-day placement produces</h3><ul>
+        <li>Five days of filmed story, about 25 hours of learning</li>
+        <li>Quizzes, simulations, 360° tours and skills drills, with the AI Tutor alongside</li>
+        <li>Eight 30-minute KS3 career tasters, one for each role</li>
+        <li>Teacher training films</li>
+        <li>An evidence report for every learner, usable as a recruitment screen</li>
+        <li>Learner and impact data in RCT’s impact dashboard</li>
+      </ul><a href="#vwes" style="font-weight:700">See the VWE library →</a></div>
+      <div class="card"><h3>What Royal Collection Trust commits</h3><p class="small">Indicative, to agree in phase 2.</p><ul>
+        <li>Job holders for each of the eight featured roles: a 30-minute interview and a filming day</li>
+        <li>Brand and marketing: a planning meeting, intros, outros and asset sign-off</li>
+        <li>Security: script clearance and footage sign-off</li>
+        <li>Health and safety: filming permissions, passes and an induction for the crew</li>
+        <li>Communications: agree the press release</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="pilot" aria-labelledby="pl-h">
+  <div class="wrap stack">
+    <p class="eyebrow">Proposed next step</p>
+    <h2 id="pl-h">A three-term pilot</h2>
+    <div class="phases">
+      <div class="card"><span class="tag">Term 1 · Build</span><h3>Film and build</h3><ul class="phase"><li>Start with VWE 1 (Books, Bindery and Archives) and VWE 3 (Dress and Textiles)</li><li>Film the 16 roles on site with RCT staff</li><li>RCT signs off all content</li></ul></div>
+      <div class="card"><span class="tag">Term 2 · Pilot</span><h3>Local schools first</h3><ul class="phase"><li><span class="ph">[number]</span> Access Scheme schools in Windsor, Slough, Maidenhead and Staines</li><li>Start and end surveys; first dashboard</li><li>Taster days at Pug Yard</li></ul></div>
+      <div class="card"><span class="tag">Term 3 · Scale</span><h3>National, then all four</h3><ul class="phase"><li>Open free to all UK schools</li><li>Build VWEs 2 and 4</li><li>First sponsor impact report</li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#fff">Behind the Collection</b> is a concept from Developing Experts. It is not an official Royal Collection Trust page and is not endorsed by Royal Collection Trust. Organisations named are proposed partners. Dashboard figures are illustrative. Photo placeholders show shoot briefs.</p>
+    <p style="color:#fff;font-weight:700;margin-top:6px">Sources for facts used</p>
+    <ol>
+      <li><a href="https://www.rct.uk/collection/exhibitions/queen-elizabeth-ii-her-life-in-style">Queen Elizabeth II: Her Life in Style, rct.uk</a></li>
+      <li><a href="https://www.rct.uk/schools/sessions/windsor-castle-calling-online-workshops">Windsor Castle online workshops, rct.uk</a></li>
+      <li><a href="https://www.rct.uk/access-and-communities/communities">Communities, rct.uk</a></li>
+      <li><a href="https://www.schooltravelorganiser.com/news-and-ideas/royal-collection-trust-access-scheme-open-to-schools/10214.article">Access Scheme, School Travel Organiser</a></li>
+      <li><a href="https://www.schooltravelorganiser.com/news-and-ideas/windsor-castle-opens-learning-centre-featuring-three-dedicated-classrooms/9535.article">Pug Yard Learning Centre, School Travel Organiser</a></li>
+      <li><a href="https://panda-rose-cj48.squarespace.com/blog/windsor-castle-learning-sessions-for-royal-borough-schools">Outreach to Windsor, Slough, Maidenhead and Staines</a></li>
+      <li><a href="https://heritagecrafts.org.uk/our-stories/announcements/bookbinding-apprenticeship-scheme-to-close-due-to-covid-19/">Queen’s Bindery scheme suspension, Heritage Crafts</a></li>
+      <li><a href="https://www.developingexperts.com/articles/KS1-KS2-primary-history-lessons-resources">Developing Experts KS1 and KS2 history curriculum</a></li>
+      <li><a href="https://www.developingexperts.com/articles/history-intent-design-and-approach-document">History curriculum design and approach, Developing Experts</a></li>
+      <li><a href="https://www.harmatan.co.uk/news/qba.pdf">Queen’s Bindery Apprenticeship brochure</a></li>
+      <li><a href="https://www.expressandstar.com/uk-news/royal-collection-trusts-financial-report-shows-drop-in-income-and-retail-sales-8826829">RCT financial report coverage, Express &amp; Star</a></li>
+    </ol>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---------- data ----------
+  var VWES=[
+    {id:'books',code:'VWE 1',name:'Books, Bindery and Archives',site:'Royal Library and Royal Bindery, Windsor Castle',
+     brief:'Learners join the teams who conserve, bind, catalogue and digitise the Royal Library and Royal Archives, and finish by planning the rescue of a damaged volume.',
+     sci:'Acids and alkalis, properties of materials, light',hist:'The Royal Library; the Bindery since 1770; Magna Carta activities',
+     links:'Norman Conquest workshop',
+     photo:'Wide shot of the Royal Bindery workroom: presses, tools on the wall, a binder sewing a book section by hand',
+     days:[['Meet the Library','Roles 1–2: tour the Royal Library and the Bindery'],['Paper science','Roles 3–4: why old paper turns brown; test pH'],['Hand skills','Role 5: fold, sew and case a simple binding'],['Records and data','Roles 6–7: catalogue an item; plan its digitisation'],['The brief','Role 8: write a conservation plan for a damaged volume']],
+     roles:[
+      ['Apprentice bookbinder','Learns hand binding on the job, from sewing to finishing','Hand skills, patience and precision','Bookbinding apprenticeship','An apprentice sewing a book section on a sewing frame, close on hands and thread'],
+      ['Fine bookbinder','Makes new bindings and boxes for the Royal Household','Design, leatherwork and gold tooling','Apprenticeship, then years at the bench','A binder tooling gold lettering onto a leather spine with a heated finishing tool'],
+      ['Book conservator','Repairs historic bindings so books can be used and shown','Materials science and problem-solving','Conservation degree or apprenticeship','A conservator easing a detached board back onto a historic book, magnifier lamp lit'],
+      ['Paper conservator','Repairs letters, maps and prints on paper','Chemistry of paper and adhesives','Cultural heritage conservation technician (L4) or degree','Hands applying a thin Japanese tissue repair to a torn page with a fine brush'],
+      ['Librarian','Looks after the Royal Library and helps researchers find what they need','Organising information and research','Degree, then library qualification','A librarian lifting a volume from tall library shelves, warm reading-room light'],
+      ['Archivist','Cares for royal letters, diaries and records','Reading historical sources, cataloguing','Archivist and records manager apprenticeship (L7) or MA','An archivist opening a grey archive box at a table, wearing nitrile gloves'],
+      ['Digitisation technician','Photographs pages so the world can see them online','Light, lenses and colour accuracy','Photography course or digital apprenticeship','A technician at a copy stand photographing an open manuscript under even lighting'],
+      ['Preventive conservation technician','Monitors temperature, humidity and pests in the stores','Data logging and environmental science','Museums and galleries technician (L3)','A technician reading a data logger in a store room of archive shelving']]},
+    {id:'decorative',code:'VWE 2',name:'Furniture, Clocks and Gilding',site:'State Apartments, Windsor Castle',
+     brief:'Learners work across the State Apartments with the people who keep furniture, clocks, gilding and armour in condition, and finish by restoring a room after a fire.',
+     sci:'Forces, materials, metals and humidity',hist:'The State Apartments and the 1992 Windsor fire',
+     links:'Castles, Armour and Knights workshops',
+     photo:'A conservator working on a gilded chair in a State Apartment, chandeliers and portraits behind',
+     days:[['Meet the rooms','Roles 1–2: furniture in the State Apartments'],['Time and motion','Role 3: gears, pendulums and keeping clocks running'],['Metal and gold','Roles 4–5: gilding and armour care'],['Fabric and finish','Roles 6–7: upholstery and ceramics'],['The brief','Role 8: plan a room’s restoration after a fire']],
+     roles:[
+      ['Furniture conservator','Conserves historic furniture without hiding its history','Woodwork, materials and judgement','Furniture apprenticeship, then conservation degree','A conservator cleaning marquetry on a cabinet with a cotton swab'],
+      ['Cabinetmaker','Makes replacement parts by hand, matched to the original','Measuring, joinery and hand tools','Furniture maker apprenticeship','A cabinetmaker cutting a dovetail at a bench, shavings on the floor'],
+      ['Horological conservator','Keeps historic clocks accurate and running','Forces, gears and fine mechanics','Clock maker apprenticeship or horology course','Close-up of hands adjusting the movement of a gilded mantel clock'],
+      ['Gilder and frame conservator','Applies and repairs gold leaf on frames and interiors','Thin films of metal, steady hands','Craft apprenticeship or conservation degree','A gilder lifting gold leaf onto a carved frame with a gilder’s tip'],
+      ['Arms and armour conservator','Protects armour and weapons from corrosion','Metals, rusting and oxidation','Metals conservation degree','A conservator inspecting a polished breastplate under a lamp'],
+      ['Heritage upholsterer','Re-covers chairs and sofas by traditional methods','Textiles, tension and hand stitching','Advanced upholsterer apprenticeship (L3)','An upholsterer tacking webbing onto a historic chair frame'],
+      ['Ceramics and glass conservator','Rejoins and stabilises porcelain and glass','Adhesives, light and materials','Conservation degree','A conservator assembling a broken porcelain vase with fine tape supports'],
+      ['Collections care assistant','Cleans and checks rooms and objects every day','Careful handling and observation','Entry role; Museums and galleries technician (L3)','A collections care assistant dusting a gilded mirror frame with a soft brush']]},
+    {id:'textiles',code:'VWE 3',name:'Dress and Textiles',site:'Queen Elizabeth II: Her Life in Style, The King’s Gallery',
+     brief:'Linked to the exhibition of more than 300 items from all ten decades of Queen Elizabeth II’s life. Learners help prepare garments for display and finish by pitching a display plan.',
+     sci:'Fibres, dyes, light and forces in mounts',hist:'The 20th century through dress; the wedding and Coronation dresses',
+     links:'The Queen workshop; the exhibition runs until 18 April 2027',
+     photo:'A textile conservator and mount maker fitting a historic dress onto a padded display mannequin',
+     days:[['Meet the team','Roles 1–2: how a garment goes on display'],['Fibre science','Role 3: fibres under the microscope; why light fades dye'],['Condition report','Role 4: inspect a virtual garment and record damage'],['Mount and light','Roles 5–6: support and light a garment safely'],['The brief','Roles 7–8: pitch and document the display']],
+     roles:[
+      ['Textile conservator','Stabilises fragile fabrics so they can be shown','Fibre science and fine stitching','Conservation degree; Craft and Design T Level as a start','A conservator stitching a support net onto silk under a magnifier'],
+      ['Mount maker','Builds bespoke supports so garments hang without strain','Forces, padding and 3D design','Craft or design course, then on the job','A mount maker carving a foam torso to fit a dress pattern'],
+      ['Conservation scientist','Tests fibres and dyes to choose safe treatments','Chemistry and microscopy','Science degree','A scientist examining a fibre sample under a microscope, screen showing the image'],
+      ['Curator of dress','Researches garments and tells their stories','Research, writing and sources','Degree, then curatorial roles','A curator studying design sketches and fabric samples spread on a table'],
+      ['Exhibition designer','Plans the layout, cases and route through the gallery','Spatial design and visitor flow','Design degree or apprenticeship','A designer reviewing a scale model of a gallery with case layouts'],
+      ['Lighting technician','Lights garments beautifully at safe levels','Light, lux and colour','Technical theatre or museums technician (L3)','A technician measuring light levels beside a display case with a lux meter'],
+      ['Registrar','Tracks every object’s location, condition and paperwork','Organisation and data accuracy','Degree or museums and galleries technician (L3)','A registrar checking an object label against a tablet at a crate'],
+      ['Collections photographer','Photographs garments for the catalogue and online','Light, lenses and composition','Photography course or apprenticeship','A photographer lighting a dress on a mannequin against a plain backdrop']]},
+    {id:'exhibitions',code:'VWE 4',name:'Exhibitions and Visitors',site:'The King’s Galleries and Buckingham Palace',
+     brief:'Learners see how an exhibition comes together, from loan agreements to opening day, and finish by planning a visitor experience for a new show.',
+     sci:'Environment control, light and data',hist:'How the Collection is shared with the public',
+     links:'Queen Victoria and The Queen workshops',
+     photo:'Art handlers in white gloves lifting a framed painting onto a gallery wall',
+     days:[['Opening plans','Roles 1–2: what makes an exhibition'],['Moving art safely','Roles 3–4: handling, packing and loans'],['The visitor','Roles 5–6: welcome, safety and access'],['Telling the story','Role 7: digital and print content'],['The brief','Role 8: plan opening day for a new show']],
+     roles:[
+      ['Exhibitions project manager','Runs the plan, budget and timeline for each show','Planning and teamwork','Degree or project management apprenticeship','A project manager at a planning wall of timelines and object photos'],
+      ['Paintings conservator','Cleans and stabilises paintings before display','Pigments, varnish and light','Conservation MA','A conservator removing old varnish from a portrait with a swab'],
+      ['Art technician','Installs, moves and hangs works of art','Handling, measuring and rigging','Museums and galleries technician (L3)','A technician levelling a frame on a gallery wall with a spirit level'],
+      ['Loans registrar','Organises loans to and from other museums','Detail, logistics and agreements','Degree, then registrar roles','A registrar and courier checking a painting crate on arrival'],
+      ['Warden','Looks after visitors and objects in the galleries','Communication and observation','Entry role; customer service apprenticeship','A warden talking with a family in a gallery'],
+      ['Access officer','Makes visits work for disabled visitors and their companions','Empathy, planning and inclusion','Degree or on-the-job training','An access officer guiding a visitor using a wheelchair through a gallery'],
+      ['Digital content producer','Creates films, tours and online stories','Filming, editing and writing','Digital or media apprenticeship','A producer filming a curator talking to camera in a gallery'],
+      ['Visitor experience manager','Plans how visitors move, learn and enjoy their day','Leadership and data on visitor numbers','Degree or management apprenticeship','A manager briefing a team of wardens before opening']]}
+  ];
+
+  var QS=[
+    {q:'A 150-year-old book has brown, brittle pages. What is most likely causing it?',o:['Acids in the paper slowly breaking down its cellulose fibres','Too much oxygen making the ink spread','The leather cover pulling water out of the pages'],a:0,e:'Paper made from wood pulp from the mid-1800s onward often contains acids, and lignin that turns to acid. Over time these break the cellulose chains, so the paper yellows and becomes brittle.'},
+    {q:'Which adhesive would a conservator choose to repair a tear in a historic page?',o:['Superglue, because it sets fast and very strong','Wheat starch paste, because it can be undone later with moisture','Sticky tape, because it is clean and quick'],a:1,e:'Conservators prefer reversible treatments. Wheat starch paste is strong enough to hold a repair, and a future conservator can remove it safely with moisture.'},
+    {q:'Why are rare books and drawings often displayed in dim light?',o:['To stop visitors taking photographs','Because light energy fades inks and weakens paper, and the damage builds up','Because bright light makes the room too warm for visitors'],a:1,e:'Light damage is cumulative and cannot be reversed. Sensitive paper objects are often shown at around 50 lux and rotated off display to rest.'}
+  ];
+
+  // illustrative dashboard data
+  var DASH={
+    all:{k:[['2,830','learners completing a VWE'],['102','schools taking part'],['64%','of schools Access Scheme eligible'],['+31 pts','“I could work somewhere like this”'],['354','opted in to hear about RCT vacancies']],
+      roles:[['Textile conservator',24],['Apprentice bookbinder',14],['Art technician',12],['Horological conservator',10],['Exhibition designer',8]],
+      funnel:[['Started a VWE',3470],['Completed',2830],['Earned evidence report',2430],['Opted in to vacancies',354],['Attended taster day',140],['Applied to RCT or partner',34]]},
+    books:{k:[['620','learners completing'],['24','schools'],['70%','Access Scheme eligible'],['+28 pts','“I could work somewhere like this”'],['88','opted in to vacancies']],
+      roles:[['Apprentice bookbinder',31],['Archivist',18],['Paper conservator',15],['Digitisation technician',12],['Librarian',9]],
+      funnel:[['Started',760],['Completed',620],['Evidence report',540],['Opted in',88],['Taster day',34],['Applied',9]]},
+    decorative:{k:[['540','learners completing'],['21','schools'],['61%','Access Scheme eligible'],['+26 pts','“I could work somewhere like this”'],['72','opted in to vacancies']],
+      roles:[['Horological conservator',24],['Arms and armour conservator',20],['Cabinetmaker',17],['Gilder',13],['Heritage upholsterer',9]],
+      funnel:[['Started',680],['Completed',540],['Evidence report',460],['Opted in',72],['Taster day',28],['Applied',7]]},
+    textiles:{k:[['1,150','learners completing'],['38','schools'],['66%','Access Scheme eligible'],['+36 pts','“I could work somewhere like this”'],['130','opted in to vacancies']],
+      roles:[['Textile conservator',34],['Exhibition designer',19],['Curator of dress',15],['Mount maker',12],['Collections photographer',8]],
+      funnel:[['Started',1380],['Completed',1150],['Evidence report',990],['Opted in',130],['Taster day',52],['Applied',12]]},
+    exhibitions:{k:[['520','learners completing'],['19','schools'],['58%','Access Scheme eligible'],['+29 pts','“I could work somewhere like this”'],['64','opted in to vacancies']],
+      roles:[['Art technician',26],['Digital content producer',22],['Paintings conservator',16],['Warden',11],['Access officer',9]],
+      funnel:[['Started',650],['Completed',520],['Evidence report',440],['Opted in',64],['Taster day',26],['Applied',6]]}
+  };
+  var REACH={
+    'Area':[['Windsor and Maidenhead',78],['Slough',71],['Spelthorne (Staines)',54],['London',38],['Rest of England',29],['Scotland',22],['Wales and NI',18]],
+    'Group':[['Pupil premium',66],['SEND',19],['Girls',52],['Ethnic minority backgrounds',44],['First-time visitors',73]],
+    'Stage':[['KS3 tasters',48],['KS4 VWE',34],['KS5 and college',11],['Adults and communities',7]]
+  };
+  var REACH_NOTE={'Area':'Share of eligible schools in each area that took part.','Group':'Share of participating learners in each group.','Stage':'Share of all learners by edition.'};
+  var SKILLS=[['I know what this job involves',18,81],['I could work somewhere like this',24,55],['I know how to start this career',12,63],['I can explain the science behind the work',21,58],['I am confident using hand skills',29,47]];
+
+  // ---------- helpers ----------
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function el(t,a,h){var e=document.createElement(t);if(a)for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}if(h!=null)e.innerHTML=h;return e;}
+  var CAM='<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h4l2-3h6l2 3h4v13H3z M12 10a4 4 0 1 0 0 8a4 4 0 1 0 0-8" fill="none" stroke="#555" stroke-width="1.6" stroke-linejoin="round"/></svg>';
+  function photo(label,brief,ratio){return '<div class="photo '+ratio+'" role="img" aria-label="Photo placeholder: '+esc(label)+'">'+CAM+'<b>'+esc(label)+'</b><span>'+esc(brief)+'</span></div>';}
+  function bars(rows,max,suffix){return rows.map(function(r){var w=Math.round(100*r[1]/max);return '<div class="bar"><span>'+esc(r[0])+'</span><span class="track" role="img" aria-label="'+esc(r[0])+': '+r[1]+(suffix||'')+'"><span class="fill" style="width:'+w+'%"></span></span><b>'+r[1]+(suffix||'')+'</b></div>';}).join('');}
+
+  // ---------- VWE library ----------
+  var cards=document.getElementById('vwe-cards'),detail=document.getElementById('vwe-detail'),sel=0;
+  function drawVWE(){
+    cards.innerHTML='';
+    VWES.forEach(function(v,i){
+      var b=el('button',{type:'button','class':'vwe-card','aria-pressed':i===sel?'true':'false'},
+        photo('Cover photo · '+v.code,v.photo,'r32')+'<span class="t"><span class="code">'+esc(v.code)+'</span><h4>'+esc(v.name)+'</h4><span class="small">'+esc(v.site)+' · 8 roles</span></span>');
+      b.onclick=function(){sel=i;drawVWE();};
+      cards.appendChild(b);
+    });
+    var v=VWES[sel];
+    detail.innerHTML=
+      '<div class="detail-head">'+photo('Header photo · '+v.code,v.photo,'r169')+
+      '<div class="txt"><span class="tag">'+esc(v.code)+' · 5 days · 8 job roles</span><h3>'+esc(v.name)+'</h3><p>'+esc(v.brief)+'</p>'+
+      '<dl class="meta"><dt>Setting</dt><dd>'+esc(v.site)+'</dd><dt>Science</dt><dd>'+esc(v.sci)+'</dd><dt>History</dt><dd>'+esc(v.hist)+'</dd><dt>Follows on from</dt><dd>'+esc(v.links)+'</dd></dl></div></div>'+
+      '<ol class="days" style="margin:0;padding:0">'+v.days.map(function(d,k){return '<li><span class="d">Day '+(k+1)+'</span><h4>'+esc(d[0])+'</h4><span class="small">'+esc(d[1])+'</span></li>';}).join('')+'</ol>'+
+      '<div class="roles"><h3>The eight job roles</h3><div class="role-grid">'+
+      v.roles.map(function(r,k){return '<article class="role">'+photo('Role photo '+(k+1)+' of 8',r[4],'r43')+
+        '<div class="body"><span class="num">Role '+(k+1)+'</span><h4>'+esc(r[0])+'</h4><span class="small">'+esc(r[1])+'</span><span class="skill"><b>Skills:</b> '+esc(r[2])+'</span><span class="route"><b>Route in:</b> '+esc(r[3])+'</span></div></article>';}).join('')+
+      '</div></div>';
+  }
+  drawVWE();
+
+  // ---------- quiz ----------
+  var qi=0,answered=false,score=0;
+  var st=document.getElementById('q-steps'),pos=document.getElementById('q-pos'),qt=document.getElementById('q-text'),qo=document.getElementById('q-opts'),fb=document.getElementById('q-fb'),nx=document.getElementById('q-next');
+  function drawQ(){
+    st.innerHTML='';QS.forEach(function(x,i){st.appendChild(el('span',{'class':i<=qi?'on':''}));});
+    fb.innerHTML='';nx.hidden=true;answered=false;
+    if(qi>=QS.length){pos.textContent='Checkpoint complete';qt.textContent='You scored '+score+' of '+QS.length+'.';qo.innerHTML='';
+      fb.innerHTML='<div class="feedback">This result goes into the learner’s skills record and RCT’s impact data. Day 2: repair a torn page step by step with the paper conservator.</div>';
+      nx.hidden=false;nx.textContent='Start again';return;}
+    var Q=QS[qi];pos.textContent='Question '+(qi+1)+' of '+QS.length;qt.textContent=Q.q;qo.innerHTML='';
+    Q.o.forEach(function(o,k){var b=el('button',{type:'button',text:o});b.onclick=function(){
+      if(answered)return;answered=true;var ok=k===Q.a;if(ok)score++;
+      b.className=ok?'right':'wrong';if(!ok)qo.children[Q.a].className='right';
+      fb.innerHTML='<div class="feedback"><b>'+(ok?'Correct. ':'Not quite. ')+'</b>'+esc(Q.e)+'</div>';
+      nx.hidden=false;nx.textContent=qi<QS.length-1?'Next question':'See my result';nx.focus();};qo.appendChild(b);});
+  }
+  nx.onclick=function(){if(qi>=QS.length){qi=0;score=0;}else qi++;drawQ();};
+  drawQ();
+
+  // ---------- dashboard ----------
+  var dsel=document.getElementById('dash-vwe'),dKey='all',rKey='Area';
+  dsel.appendChild(el('option',{value:'all',text:'All four VWEs'}));
+  VWES.forEach(function(v){dsel.appendChild(el('option',{value:v.id,text:v.code+': '+v.name}));});
+  dsel.onchange=function(){dKey=dsel.value;drawDash();};
+  function drawDash(){
+    var D=DASH[dKey];
+    document.getElementById('kpis').innerHTML=D.k.map(function(k){return '<div class="kpi"><b>'+esc(k[0])+'</b><span>'+esc(k[1])+'</span></div>';}).join('');
+    var rt=document.getElementById('reach-tabs');rt.innerHTML='';
+    Object.keys(REACH).forEach(function(k){var b=el('button',{type:'button','aria-pressed':k===rKey?'true':'false',text:k});b.onclick=function(){rKey=k;drawDash();};rt.appendChild(b);});
+    document.getElementById('reach-bars').innerHTML=bars(REACH[rKey],100,'%');
+    document.getElementById('reach-note').textContent=REACH_NOTE[rKey];
+    document.getElementById('skill-bars').innerHTML=SKILLS.map(function(s){
+      return '<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:15px">'+esc(s[0])+'</span>'+
+        '<div class="bar" style="grid-template-columns:1fr 48px"><span class="track" role="img" aria-label="Before: '+s[1]+'%"><span class="fill pre" style="width:'+s[1]+'%"></span></span><span class="small">'+s[1]+'%</span></div>'+
+        '<div class="bar" style="grid-template-columns:1fr 48px"><span class="track" role="img" aria-label="After: '+s[2]+'%"><span class="fill" style="width:'+s[2]+'%"></span></span><b>'+s[2]+'%</b></div></div>';}).join('');
+    document.getElementById('role-bars').innerHTML=bars(D.roles,40,'%');
+    var top=D.funnel[0][1];
+    document.getElementById('funnel').innerHTML=D.funnel.map(function(f){var w=Math.max(34,Math.round(100*Math.sqrt(f[1]/top)));return '<div style="width:'+w+'%"><span>'+esc(f[0])+'</span><b>'+f[1].toLocaleString('en-GB')+'</b></div>';}).join('');
+  }
+  drawDash();
+
+  // ---------- build process ----------
+  var PHASES=[
+    {t:'Scope the programme',w:[1,2],steps:[['Identify the domain disciplines (job family) for the VWE','both'],['Choose the job roles to feature in the five-day placement','both'],['Identify the overarching big project the VWE follows','both'],['Choose the company to spotlight','both'],['Gather the vision, values and mission documents','pt'],['Map the soft, literacy, digital and green skills to include','de']]},
+    {t:'Set up with the partner',w:[2,4],steps:[['Schedule film day dates','both'],['Sort health and safety permissions','pt'],['Sort car park passes and any additional permissions, clearance and tickets','pt'],['Meet the branding and marketing team','both'],['Plan the preparation needed for location filming','both'],['Agree the dress code so branding is up to date on all clothing','pt'],['Agree the timeline','both',1]]},
+    {t:'Research the roles',w:[3,4],steps:[['Identify job holders who are great storytellers for each spotlight role','pt'],['Get a copy of each job description','pt'],['Complete a 30-minute interview with each job holder','de'],['Identify the soft skills needed and the repetitive tasks done each week','de']]},
+    {t:'Design the learning',w:[5,7],steps:[['Create a high-level plan for the five days','de'],['Check and challenge the plan','both',1],['Share the detailed Day 1 plan, with the story and film scripts','de'],['Film scripts cleared by security','pt',1],['Identify props needed for filming activities','both'],['Design the quizzes, simulations, 360° tours and skills drills','de'],['Secure approvals for the plan and scripts','pt',1]]},
+    {t:'Prepare to film',w:[8,8],steps:[['Branding team produces intros and outros for the films','pt'],['Sort filming permissions for each location','pt'],['Circulate film scripts for a read-through before filming day','both']]},
+    {t:'Film',w:[9,9],steps:[['Complete filming on site','both']]},
+    {t:'Edit and approve',w:[9,11],steps:[['Complete the first edit','de'],['Partner reviews footage, including branding and security sign-off','pt',1],['Make any re-edits','de'],['Render Day 1 and share it for approval','de',1],['Once Day 1 is approved, render Days 2 to 5','de']]},
+    {t:'Test',w:[12,12],steps:[['Test the content internally','de'],['Make improvements from the feedback','de']]},
+    {t:'Repurpose',w:[12,13],steps:[['Repurpose content into 30-minute single-role career tasters','de'],['Edit the teacher training films','de'],['Share all assets created for sign-off and approval','pt',1]]},
+    {t:'Launch',w:[14,14],steps:[['Agree the press release','both'],['Review all assets for final sign-off','both',1],['Publish the VWE','de']]}
+  ];
+  var PROGSTATE={books:[5,'Filming'],decorative:[0,'Planned'],textiles:[3,'Scripting'],exhibitions:[0,'Planned']};
+  var WHO={de:'Developing Experts',pt:'Royal Collection Trust',both:'Together'};
+  var COLB={done:'#2F6B3A',now:'#8A2A2B',todo:'#C9C9C9'};
+  var TOTAL=PHASES.reduce(function(a,p){return a+p.steps.length;},0);
+  var GATES=PHASES.reduce(function(a,p){return a+p.steps.filter(function(x){return x[2];}).length;},0);
+  var bPh=0,bProg=0;
+  function weeks(w){return w[0]===w[1]?'week '+w[0]:'weeks '+w[0]+'–'+w[1];}
+  document.getElementById('b-facts').innerHTML=[[PHASES.length,'phases'],[TOTAL,'steps'],[GATES,'approval gates for RCT'],['~14 weeks','per programme, indicative']].map(function(f){return '<div><b>'+f[0]+'</b><span>'+f[1]+'</span></div>';}).join('');
+  var bsel=document.getElementById('b-prog');
+  VWES.forEach(function(v,i){bsel.appendChild(el('option',{value:String(i),text:(i+1)+'. '+v.name+' · '+PROGSTATE[v.id][1]}));});
+  bsel.onchange=function(){bProg=+bsel.value;drawB();};
+  function drawB(){
+    var V=VWES[bProg],cur=PROGSTATE[V.id][0];
+    function st(i){return i<cur?'done':i===cur?'now':'todo';}
+    var strip=document.getElementById('b-strip');strip.innerHTML='';
+    PHASES.forEach(function(p,i){
+      var g=p.steps.filter(function(x){return x[2];}).length;
+      var li=el('li');var b=el('button',{type:'button','aria-pressed':i===bPh?'true':'false'},
+        '<span class="band" style="background:'+COLB[st(i)]+'"></span><span class="when">'+String(i+1).padStart(2,'0')+' · '+weeks(p.w)+'</span><span class="pt">'+esc(p.t)+'</span><span class="meta2">'+p.steps.length+(p.steps.length>1?' steps':' step')+(g?' <span class="gate" title="Approval gates">Gate '+g+'</span>':'')+'</span>');
+      b.onclick=function(){bPh=i;drawB();};li.appendChild(b);strip.appendChild(li);
+    });
+    var P=PHASES[bPh],ps=st(bPh);
+    document.getElementById('b-phase').innerHTML=
+      '<span class="eyebrow">Phase '+(bPh+1)+' of '+PHASES.length+' · '+weeks(P.w).replace('–',' to ')+'</span><h3>'+esc(P.t)+'</h3>'+
+      '<ol class="steplist">'+P.steps.map(function(x){return '<li class="'+(x[2]?'isgate':'')+'"><span class="stick '+ps+'" aria-label="'+(ps==='done'?'Done':ps==='now'?'In progress':'To do')+'">'+(ps==='done'?'✓':'')+'</span><span class="stext">'+esc(x[0])+'</span>'+(x[2]?'<span class="gate">Approval gate</span>':'')+'<span class="who '+x[1]+'">'+WHO[x[1]]+'</span></li>';}).join('')+'</ol>'+
+      '<div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:6px"><button type="button" class="btn btn-line" id="b-prev"'+(bPh===0?' disabled':'')+'>← Previous phase</button><button type="button" class="btn btn-line" id="b-next"'+(bPh===PHASES.length-1?' disabled':'')+'>Next phase →</button></div>';
+    document.getElementById('b-prev').onclick=function(){bPh=Math.max(0,bPh-1);drawB();};
+    document.getElementById('b-next').onclick=function(){bPh=Math.min(PHASES.length-1,bPh+1);drawB();};
+    var doneSteps=PHASES.slice(0,cur).reduce(function(a,p){return a+p.steps.length;},0),pct=Math.round(100*doneSteps/TOTAL);
+    document.getElementById('b-ring').style.background='conic-gradient(#2F6B3A '+pct+'%, #E4E4E4 0)';
+    document.getElementById('b-pct').textContent=pct+'%';
+    document.getElementById('b-count').textContent=doneSteps+' of '+TOTAL+' steps';
+    document.getElementById('b-status').textContent=PROGSTATE[V.id][1];
+    document.getElementById('b-about').textContent='Spotlight: Royal Collection Trust, '+V.site+'. Features 8 roles: '+V.roles.map(function(r){return r[0];}).join(', ')+'.';
+    document.getElementById('b-plist').innerHTML=PHASES.map(function(p,i){var s2=st(i);return '<li><span>'+(i+1)+'. '+esc(p.t)+'</span><b style="color:'+(s2==='done'?'#2F6B3A':s2==='now'?'#8A2A2B':'#666')+'">'+(s2==='done'?'Done':s2==='now'?'In progress':'To do')+'</b></li>';}).join('');
+    var g='<span></span>';for(var k=1;k<=14;k++)g+='<span class="wk">W'+k+'</span>';
+    PHASES.forEach(function(p,i){g+='<span style="grid-column:1">'+(i+1)+'. '+esc(p.t)+'</span><span class="bar2" style="grid-column:'+(p.w[0]+1)+' / '+(p.w[1]+2)+';background:'+COLB[st(i)]+'" role="img" aria-label="'+esc(p.t)+': '+weeks(p.w)+'"></span>';});
+    document.getElementById('b-gantt').innerHTML=g;
+  }
+  drawB();
+
+  // ---------- history curriculum ----------
+  var HYEARS=[
+    ['Year 1',[['Toys'],['Houses and Homes','Windsor Castle is a working royal home. Pupils compare it with homes near school, just as RCT’s Fire at Windsor Castle session explores the castle as a home.','Fire at Windsor Castle (on site)','VWE 2: collections care assistant, furniture conservator'],['The Great Fire of London','A second great fire: the 1992 Windsor Castle fire, and the craftspeople who restored the State Apartments.','Fire at Windsor Castle (on site)','VWE 2: furniture conservator, gilder, cabinetmaker']]],
+    ['Year 2',[['Castles','Windsor Castle, the oldest inhabited castle in the world. This is also a free sample unit.','Castles and Knights (online and outreach)','VWE 2: arms and armour conservator, horological conservator'],['Victorians','Queen Victoria’s portraits, letters and life at Windsor.','Queen Victoria (online)','VWE 4: paintings conservator; VWE 1: archivist'],['Florence Nightingale and Mary Seacole']]],
+    ['Year 3',[['The Stone Age'],['Bronze Age to Iron Age'],['Ancient Egypt']]],
+    ['Year 4',[['The Legacy of Ancient Greece'],['The Roman Empire in Britain'],['Anglo-Saxon Britain']]],
+    ['Year 5',[['Vikings in Britain'],['Ancient Maya Civilisation'],['The Tudors','Tudor portraits, drawings and books in the Royal Collection, and how they are cared for today.','A visit to Windsor Castle or a King’s Gallery','VWE 4: paintings conservator; VWE 1: paper conservator']]],
+    ['Year 6',[['The Industrial Revolution','How precision engineering changed timekeeping, seen through historic royal clocks.','A visit to the Windsor Castle State Apartments','VWE 2: horological conservator, cabinetmaker'],['The Impact of World War II on Britain'],['Our History','The local history study. For schools in Windsor, Slough, Maidenhead and Staines, Windsor Castle can be the site for the final project.','Outreach visit, then an Access Scheme visit','Any VWE: the project ends with a career link']]]
+  ];
+  var hSel='1-0';
+  function drawH(){
+    var y=document.getElementById('h-years');y.innerHTML='';
+    HYEARS.forEach(function(Y,yi){
+      var c=el('div',{'class':'year'},'<h4>'+Y[0]+'</h4>');var ul=el('ul');
+      Y[1].forEach(function(u,ui){
+        var key=yi+'-'+ui,rc=u.length>1;
+        var b=el('button',{type:'button','class':'unit'+(rc?' rc':''),'aria-pressed':rc?(key===hSel?'true':'false'):null},(rc?'<span class="crown">Royal Collection link</span>':'')+esc(u[0]));
+        if(!rc){b.removeAttribute('aria-pressed');b.disabled=true;b.style.opacity='1';}
+        else b.onclick=function(){hSel=key;drawH();};
+        var li=el('li');li.appendChild(b);ul.appendChild(li);
+      });
+      c.appendChild(ul);y.appendChild(c);
+    });
+    var k=hSel.split('-'),Y=HYEARS[+k[0]],U=Y[1][+k[1]];
+    document.getElementById('h-detail').innerHTML='<span class="tag">'+Y[0]+' · Developing Experts unit</span><h3>'+esc(U[0])+'</h3><p>'+esc(U[1])+'</p><dl class="meta"><dt>RCT session</dt><dd>'+esc(U[2])+'</dd><dt>Career link</dt><dd>'+esc(U[3])+'</dd></dl>';
+  }
+  drawH();
+})();
+</script>
+</body>
+</html>

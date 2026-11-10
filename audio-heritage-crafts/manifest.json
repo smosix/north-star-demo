@@ -1,0 +1,78 @@
+{
+ "s01": {
+  "src": "audio-heritage-crafts/s01.mp3",
+  "dur": 28.1
+ },
+ "s02": {
+  "src": "audio-heritage-crafts/s02.mp3",
+  "dur": 15.3
+ },
+ "s03": {
+  "src": "audio-heritage-crafts/s03.mp3",
+  "dur": 17.0
+ },
+ "s04": {
+  "src": "audio-heritage-crafts/s04.mp3",
+  "dur": 13.0
+ },
+ "s05": {
+  "src": "audio-heritage-crafts/s05.mp3",
+  "dur": 10.7
+ },
+ "s06": {
+  "src": "audio-heritage-crafts/s06.mp3",
+  "dur": 10.4
+ },
+ "s07": {
+  "src": "audio-heritage-crafts/s07.mp3",
+  "dur": 8.2
+ },
+ "s08": {
+  "src": "audio-heritage-crafts/s08.mp3",
+  "dur": 9.4
+ },
+ "s09": {
+  "src": "audio-heritage-crafts/s09.mp3",
+  "dur": 23.1
+ },
+ "s10": {
+  "src": "audio-heritage-crafts/s10.mp3",
+  "dur": 15.8
+ },
+ "s11": {
+  "src": "audio-heritage-crafts/s11.mp3",
+  "dur": 18.6
+ },
+ "s12": {
+  "src": "audio-heritage-crafts/s12.mp3",
+  "dur": 10.5
+ },
+ "s13": {
+  "src": "audio-heritage-crafts/s13.mp3",
+  "dur": 11.4
+ },
+ "s14": {
+  "src": "audio-heritage-crafts/s14.mp3",
+  "dur": 12.9
+ },
+ "s15": {
+  "src": "audio-heritage-crafts/s15.mp3",
+  "dur": 10.0
+ },
+ "s16": {
+  "src": "audio-heritage-crafts/s16.mp3",
+  "dur": 14.2
+ },
+ "s17": {
+  "src": "audio-heritage-crafts/s17.mp3",
+  "dur": 9.6
+ },
+ "s18": {
+  "src": "audio-heritage-crafts/s18.mp3",
+  "dur": 13.2
+ },
+ "s19": {
+  "src": "audio-heritage-crafts/s19.mp3",
+  "dur": 9.6
+ }
+}

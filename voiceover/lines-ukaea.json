@@ -1,0 +1,518 @@
+[
+ {
+  "stop": 1,
+  "key": "s01",
+  "title": "Huw's five aims",
+  "text": "Welcome to the guided tour of North Star for fusion, built around Huw's five aims: track, build, regionalise, fast-track and develop. Each one opens the part of the platform that delivers it. We'll follow a learner from first interest to a job, then look at the data, U K A E A's own staff, how it all joins up, and the back office."
+ },
+ {
+  "stop": 2,
+  "key": "s02",
+  "title": "One picture of the national effort",
+  "text": "Here's the national effort on one page: training places against the July 2027 target, Moodle adoption, passports issued, and how the forty million pounds is being spent."
+ },
+ {
+  "stop": 3,
+  "key": "s03",
+  "title": "Front ends for employment partners",
+  "text": "Work coaches, prison employment hub leads and armed forces transition advisers each get their own front end. They see their caseload, their quick actions, and the partners for their group."
+ },
+ {
+  "stop": 4,
+  "key": "s04",
+  "title": "Tell us about you",
+  "text": "A learner starts with a few quick, friendly questions: what they enjoy, what they're good at, what matters to them, and where they live. Every answer updates their strengths and best match as they go, and shapes their profile, the A I Tutor, and the training and jobs they see."
+ },
+ {
+  "stop": 5,
+  "key": "s05",
+  "title": "Roles I've tried",
+  "text": "Every V W E a learner finishes appears on their profile. It shows how good a fit they are, from soft skills, aptitude and competency, and how much they enjoyed it on the Ignition scale, from Cold to Ignition. A chart shows their sweet spot, badges reward exploring, and it suggests what to try next."
+ },
+ {
+  "stop": 6,
+  "key": "s06",
+  "title": "The detail behind the money",
+  "text": "Behind the pay figure there's a full payslip by year, month and week, with employer pension and a minimum wage check for the learner's age. There's a breakdown of every monthly cost, take-home over the first ten years, and how soon they could save for driving lessons, a car or a home deposit. They can compare any other role side by side."
+ },
+ {
+  "stop": 7,
+  "key": "s07",
+  "title": "Jobs you're the best fit for",
+  "text": "The roles a learner has tried feed straight into job advice. Each live job gets a fit score from their V W E results, enjoyment, level and distance, labelled strong match, good match or stretch, with the reasons and the best next step."
+ },
+ {
+  "stop": 8,
+  "key": "s08",
+  "title": "Make it yours",
+  "text": "Every user can personalise their profile with a photo or avatar, interests, how they like to learn, and their North Star. Under eighteens pick an avatar, unless their school turns photos on."
+ },
+ {
+  "stop": 9,
+  "key": "s09",
+  "title": "Who sees what",
+  "text": "People choose who sees their photo and details. Employers never see a name, photo, age or postcode before an interview, which keeps recruitment fair."
+ },
+ {
+  "stop": 10,
+  "key": "s10",
+  "title": "Career matches",
+  "text": "Each visitor gets fusion careers that suit them, based on their aptitude, what their passport already proves, demand for the role, and openings near them. You can switch person, or take the quiz as yourself."
+ },
+ {
+  "stop": 11,
+  "key": "s11",
+  "title": "Based on their own data",
+  "text": "Matches draw on the learner's own data: aptitude from the quiz and the V W Es, and competencies from the passport and the A I Tutor, always with consent. They're suggestions for the person, never a filter for employers."
+ },
+ {
+  "stop": 12,
+  "key": "s12",
+  "title": "Where your chances are best",
+  "text": "Anyone exploring their options says where they are now and where they live, and sees the fusion roles with the strongest demand and best fit. Change the answers, and watch the ranking move."
+ },
+ {
+  "stop": 13,
+  "key": "s13",
+  "title": "How a VWE works",
+  "text": "This is the product film. It shows a virtual work experience from start to finish, and it opens on YouTube in a new tab."
+ },
+ {
+  "stop": 14,
+  "key": "s14",
+  "title": "KS3 tasters and KS4 and KS5 placements",
+  "text": "Each fusion domain has one five-day placement for key stage four and five, featuring eight job roles, released in three waves according to demand. Every role also has a thirty-minute key stage three taster, a first look that works for everyone, plus a one-day V W E with every partner. There's also a page showing what merging programmes would cost."
+ },
+ {
+  "stop": 15,
+  "key": "s15",
+  "title": "The tutor inside every VWE",
+  "text": "When a learner answers a task, the A I Tutor steps in with a guiding question rather than just marking it. Here the learner picked the risky option, and the tutor helps them work out why."
+ },
+ {
+  "stop": 16,
+  "key": "s16",
+  "title": "Fusion in a day",
+  "text": "Fusion in a day is a one-day V W E with every partner: the science, design and consent, build and make, run and maintain, and then finding your fit. A two-hour version runs in Jobcentres, youth hubs and prison employment hubs."
+ },
+ {
+  "stop": 17,
+  "key": "s17",
+  "title": "80 career tasters",
+  "text": "Every placement features eight roles, and each has its own thirty-minute taster, open to everyone. You can search all eighty by stage, domain or pay, each with its partner, entry route and linked lessons. Start one now, or ask to be told when it launches."
+ },
+ {
+  "stop": 18,
+  "key": "s18",
+  "title": "The impact, in their own words",
+  "text": "The testimonial film shows what virtual work experiences change for the people who take part, next to the impact figures."
+ },
+ {
+  "stop": 19,
+  "key": "s19",
+  "title": "What could this job pay for?",
+  "text": "Pick a fusion role and a lifestyle, and see take-home pay, monthly costs and what's left over. It uses the 2026 to 27 tax rules and local living costs, and every job on the board links here."
+ },
+ {
+  "stop": 20,
+  "key": "s20",
+  "title": "Zoom into your area",
+  "text": "You can zoom into any region, or straight to where you live. Up close you see local employers, work placements and part-time jobs, alongside training and vacancies."
+ },
+ {
+  "stop": 21,
+  "key": "s21",
+  "title": "Your local fusion landscape",
+  "text": "For the role you choose, you see each step of the ladder near you: how many roles there are, the pay, where to train and where to get experience. Then you can browse training, placements, jobs and employers, nearest first."
+ },
+ {
+  "stop": 22,
+  "key": "s22",
+  "title": "Kept up to date by API",
+  "text": "Roles arrive automatically from employers' applicant tracking systems and the Department for Education's apprenticeship service, and close when they're filled. Press Sync now to watch new roles arrive."
+ },
+ {
+  "stop": 23,
+  "key": "s23",
+  "title": "Jobs near you",
+  "text": "Dan is in Grimsby, so every role shows its distance and travel time. He can tick only within range, or sort by nearest first."
+ },
+ {
+  "stop": 24,
+  "key": "s24",
+  "title": "Local jobs market",
+  "text": "Dan also sees his local market: open roles, applicants per role, time to fill, pay against the local median, and shortage roles. Every job card shows the same for its area, with inclusive employer badges."
+ },
+ {
+  "stop": 25,
+  "key": "s25",
+  "title": "Supply chain job board",
+  "text": "Here are roles across the whole fusion supply chain, filtered by region, capability, type and level, and sorted by how well they match Dan's passport. Applying sends the passport and V W E report, with his consent."
+ },
+ {
+  "stop": 26,
+  "key": "s26",
+  "title": "Opportunities, employers and supply chain",
+  "text": "Each region's openings, employers and supply chain, including the published STEP supply chain figures."
+ },
+ {
+  "stop": 27,
+  "key": "s27",
+  "title": "One VWE, two jobs",
+  "text": "A learner completes a V W E and applies with their evidence report instead of a C V. Developing Experts ranks the applicants, and every applicant hears back. A person always makes the decision."
+ },
+ {
+  "stop": 28,
+  "key": "s28",
+  "title": "The evidence report",
+  "text": "Five days of quizzes, writing, engagement and tutor evidence, ranked for the employer. In the Morgan Sindall cohort, one in four learners was recruited."
+ },
+ {
+  "stop": 29,
+  "key": "s29",
+  "title": "Fast-track",
+  "text": "Dan's offshore record came across from the Energy Skills Passport. Try creative technology too, where real-time three D skills map across to fusion's digital twins."
+ },
+ {
+  "stop": 30,
+  "key": "s30",
+  "title": "Routes into work",
+  "text": "People on benefits, armed forces leavers, career movers, prison leavers and young people not in work are tracked from identification to six months in work, by region. Pick any cell to open a group and region."
+ },
+ {
+  "stop": 31,
+  "key": "s31",
+  "title": "Prison leavers into work",
+  "text": "Training before release on offline tablets, placements on temporary licence, and a job offer through the hub. Offence details are never held, and routes start where vetting allows."
+ },
+ {
+  "stop": 32,
+  "key": "s32",
+  "title": "Young people not in work",
+  "text": "Every young person who is N E E T, or at risk, is tracked from the first warning sign to six months settled in work, by area and group."
+ },
+ {
+  "stop": 33,
+  "key": "s33",
+  "title": "Strategies that work",
+  "text": "Eleven strategies, from early warning to in-work support, with cost and impact for each. Pick an area and combine strategies to see the projection."
+ },
+ {
+  "stop": 34,
+  "key": "s34",
+  "title": "An adviser's caseload",
+  "text": "Youth Guarantee advisers see their own young people, with consent: barriers, progress, next action, and who has gone quiet."
+ },
+ {
+  "stop": 35,
+  "key": "s35",
+  "title": "Try the tutor yourself",
+  "text": "Now it's your turn. Answer as Ayo, pick a wrong answer, and watch the tutor step down the ladder, then help you climb back."
+ },
+ {
+  "stop": 36,
+  "key": "s36",
+  "title": "Evidence, automatically",
+  "text": "Every answer sends an x A P I statement to the passport, and a grade back to the Moodle gradebook. The evidence builds itself."
+ },
+ {
+  "stop": 37,
+  "key": "s37",
+  "title": "The AI Tutor in action",
+  "text": "Six full-length sessions: a Year ten pupil in a V W E, a U K A E A technician, a new starter in Fusion Foundations, someone on benefits, a forces leaver and a prison leaver. Press play to watch Jess work out how robots are controlled inside a fusion machine."
+ },
+ {
+  "stop": 38,
+  "key": "s38",
+  "title": "Watch the tutor work",
+  "text": "Press play to watch Tom's session on working in active areas. The pink notes show the tutor's diagnosis as it happens, and the panel shows what his manager sees at the end."
+ },
+ {
+  "stop": 39,
+  "key": "s39",
+  "title": "The Skills Passport",
+  "text": "This shows what Ayo holds against what the next role needs. Only the real gaps become courses."
+ },
+ {
+  "stop": 40,
+  "key": "s40",
+  "title": "Learners choose what's shared",
+  "text": "Course scores, skills and competencies from the A I Tutor are only shared if the learner switches it on. They can share anonymous statistics, allow ranking by employers under a candidate I D, or share their full profile after an interview invitation."
+ },
+ {
+  "stop": 41,
+  "key": "s41",
+  "title": "Rank on evidence, not identity",
+  "text": "Employers see a shortlist ranked on mastery, competencies and V W E evidence, with the reasons for each rank. They see a name only when the candidate accepts an interview."
+ },
+ {
+  "stop": 42,
+  "key": "s42",
+  "title": "Fusion Foundations: learn",
+  "text": "One induction for every new entrant to fusion: a shared core taught with the A I Tutor, plus each employer's add-on modules. The certificate travels on the passport, so changing employer means taking only the new add-ons."
+ },
+ {
+  "stop": 43,
+  "key": "s43",
+  "title": "Fusion Foundations: develop",
+  "text": "Employers build their induction from the industry core, lock the required safety modules, add their own, choose languages, and publish straight to their Moodle."
+ },
+ {
+  "stop": 44,
+  "key": "s44",
+  "title": "One induction, shortened by the passport",
+  "text": "A new U K A E A starter from offshore takes Fusion Foundations plus the U K A E A add-on. Modules their passport proves are recognised, and close ones are shortened. Change where they're coming from, and the plan changes."
+ },
+ {
+  "stop": 45,
+  "key": "s45",
+  "title": "Fully inclusive",
+  "text": "One lesson can be published for a pupil, an apprentice, a career changer or staff, in Welsh, Polish, Ukrainian, Arabic or Urdu, in plain English or easy read, with read aloud, captions, B S L and more. The accessibility and language button at the top applies settings across the whole platform."
+ },
+ {
+  "stop": 46,
+  "key": "s46",
+  "title": "Build pathways",
+  "text": "Eight families, five levels, and the route into each rung. The first two levels are candidates for Skills England apprenticeship units."
+ },
+ {
+  "stop": 47,
+  "key": "s47",
+  "title": "Regional content, uploaded",
+  "text": "Regional skills bodies upload the courses they already have. U K A E A reviews them, they're tagged to a pathway rung, and then published into partners' Moodle sites."
+ },
+ {
+  "stop": 48,
+  "key": "s48",
+  "title": "How VWEs are made",
+  "text": "Ten phases and forty-one steps, from choosing the eight roles and the big project, to filming, sign-off, key stage three repurposing and publishing. The diamonds are the partner's approval gates."
+ },
+ {
+  "stop": 49,
+  "key": "s49",
+  "title": "Track every programme",
+  "text": "Pick a programme to see which phase it's in. Tick steps as they're done, and the diagram and timeline update."
+ },
+ {
+  "stop": 50,
+  "key": "s50",
+  "title": "Need against progress",
+  "text": "One view of whether the industry will have the people it needs by 2030, by job family and region, updated from every learner record."
+ },
+ {
+  "stop": 51,
+  "key": "s51",
+  "title": "Talent by region and discipline",
+  "text": "Four stages on the way into fusion: exploring, preparing, working, and switching in from other industries. Pick a stage to colour the grid."
+ },
+ {
+  "stop": 52,
+  "key": "s52",
+  "title": "One place, one discipline",
+  "text": "Pick any cell to see all four stages against the 2030 need, the shortfall, and what the numbers suggest doing next."
+ },
+ {
+  "stop": 53,
+  "key": "s53",
+  "title": "Track every learner",
+  "text": "From a first fusion lesson to a first fusion job, each learner is counted once, because the passport follows them."
+ },
+ {
+  "stop": 54,
+  "key": "s54",
+  "title": "Demand to 2035",
+  "text": "New fusion entrants needed, against supply on today's routes and with the platform, anchored on STEP and private fusion figures."
+ },
+ {
+  "stop": 55,
+  "key": "s55",
+  "title": "One map: jobs, training and talent",
+  "text": "One U K map with layers for places to study, vacancies by town, and the talent gap in each region. Turn layers on and off, filter by discipline, and pick any marker."
+ },
+ {
+  "stop": 56,
+  "key": "s56",
+  "title": "Actions for each region",
+  "text": "Pick a region to see need against what's on track, training places, Moodle connections and suggested actions, with an export for the local skills improvement plan."
+ },
+ {
+  "stop": 57,
+  "key": "s57",
+  "title": "Location sensitive",
+  "text": "The map knows where the user is. Jess in Retford sees what's within reach: places to study and towns with fusion vacancies, sorted by distance, with the local jobs market for each town."
+ },
+ {
+  "stop": 58,
+  "key": "s58",
+  "title": "Interest in fusion, by region",
+  "text": "Data at every level, from one learner up to the nation. Pick a region to see its trend against the national average."
+ },
+ {
+  "stop": 59,
+  "key": "s59",
+  "title": "Demand by domain and level",
+  "text": "Technician roles are in greatest demand almost everywhere, while tritium and safety specialists are scarcest at higher levels. The same signal shows as a star badge on V W Es, pathways, maps and jobs."
+ },
+ {
+  "stop": 60,
+  "key": "s60",
+  "title": "Capacity and aptitude by region",
+  "text": "From anonymised data only: how many people in each region are ready, or nearly ready, for a role, how strong their skills are, and how many local roles they could fill."
+ },
+ {
+  "stop": 61,
+  "key": "s61",
+  "title": "Every group, counted fairly",
+  "text": "The same anonymised figures, split by group: pupils, college students, apprentices, young people not in work, people on benefits, forces leavers, career changers, prison leavers and U K A E A staff. Wherever fewer than ten people would show, the group is hidden."
+ },
+ {
+  "stop": 62,
+  "key": "s62",
+  "title": "Fairness from learning to interview",
+  "text": "Disability, deprivation, English as an additional language, care leavers, carers and more are tracked from learning, to ready, to shortlisted, to invited. Where a group's share drops, the platform flags it and suggests what to check."
+ },
+ {
+  "stop": 63,
+  "key": "s63",
+  "title": "Anonymised step by step",
+  "text": "Step through how one learner's record is minimised, pseudonymised for employer ranking, then generalised, aggregated and tested against the I C O's motivated intruder test, before any regional figure is published."
+ },
+ {
+  "stop": 64,
+  "key": "s64",
+  "title": "Search and pick wards",
+  "text": "Search for any ward or local authority you have access to, pick as many as you need, or add every ward in an area at once."
+ },
+ {
+  "stop": 65,
+  "key": "s65",
+  "title": "Break it down",
+  "text": "Filter by stage, fusion discipline, the industry people come from, age group, user type, and characteristics such as deprivation or disability. Figures under ten are hidden, but combined wards appear once they reach ten."
+ },
+ {
+  "stop": 66,
+  "key": "s66",
+  "title": "Add new staff",
+  "text": "H R or a line manager adds new starters one at a time, or uploads a spreadsheet. Press check the rows, then create, to see accounts and inductions built."
+ },
+ {
+  "stop": 67,
+  "key": "s67",
+  "title": "A line manager's view",
+  "text": "Each person's progress towards their own North Star, showing who is ahead, who is on track, and who needs support. It shows results only, never individual mistakes."
+ },
+ {
+  "stop": 68,
+  "key": "s68",
+  "title": "UKAEA's own North Star",
+  "text": "For U K A E A's internal staff, the platform starts from the organisation's goals, and shows how ready the workforce is for each one."
+ },
+ {
+  "stop": 69,
+  "key": "s69",
+  "title": "From today's role to their North Star",
+  "text": "Tom's route: where he is now, his next step, his North Star, and the U K A E A goal it serves. Gaps become courses, and everything else is recognised."
+ },
+ {
+  "stop": 70,
+  "key": "s70",
+  "title": "Fusion Foundations: track",
+  "text": "Every organisation sees who has finished, who is overdue and not yet safe for site work, which refreshers are due, and the misconceptions new entrants share."
+ },
+ {
+  "stop": 71,
+  "key": "s71",
+  "title": "Joined up end to end",
+  "text": "Learner identity, vacancies, careers, learning, the skills system, recognition, evidence and funding, all connected. FOSTER is the programme it delivers."
+ },
+ {
+  "stop": 72,
+  "key": "s72",
+  "title": "Inside Moodle",
+  "text": "North Star connects through L T I one point three, web services and x A P I. Providers keep their own platform, so adoption doesn't depend on a new login."
+ },
+ {
+  "stop": 73,
+  "key": "s73",
+  "title": "Connect in minutes",
+  "text": "Press connect, and watch a college go live."
+ },
+ {
+  "stop": 74,
+  "key": "s74",
+  "title": "Skills England priorities",
+  "text": "All nine of them, with what the platform does for each, from priority occupations to local skills improvement plans and Technical Excellence Colleges."
+ },
+ {
+  "stop": 75,
+  "key": "s75",
+  "title": "Working with the NSDG",
+  "text": "There are three ways to join up, from shared standards and data to one cross-sector platform. The N S D G board chooses. The proposal starts with shared standards, at no cost to it."
+ },
+ {
+  "stop": 76,
+  "key": "s76",
+  "title": "Levy transfer",
+  "text": "U K A E A and STEP contractors can pass levy funds to small suppliers for apprenticeships, at no cost to the forty million pounds."
+ },
+ {
+  "stop": 77,
+  "key": "s77",
+  "title": "Spend the £40m",
+  "text": "Move a slider, and the outputs update. Tick the N S D G option to see what co-funding shared lines could add."
+ },
+ {
+  "stop": 78,
+  "key": "s78",
+  "title": "Board and government report",
+  "text": "Generated each quarter. Switch between the Board and government versions. The local jobs market section shows open roles, applicants, fill times and pay by local authority."
+ },
+ {
+  "stop": 79,
+  "key": "s79",
+  "title": "Back office: VWE programmes",
+  "text": "Set the status of each five-day placement here, and the changes appear on the V W E pages straight away."
+ },
+ {
+  "stop": 80,
+  "key": "s80",
+  "title": "Back office: calculator settings",
+  "text": "Tax year, allowances, pension and rents by region, so the lifestyle calculator stays accurate every April."
+ },
+ {
+  "stop": 81,
+  "key": "s81",
+  "title": "Admin console",
+  "text": "Permissions for every user type, content waiting for review, Moodle sync health, and a full audit log, including job applications and new starters."
+ },
+ {
+  "stop": 82,
+  "key": "s82",
+  "title": "Front end and back end",
+  "text": "Every user has a front end built for their job. The back office controls permissions, content review, integrations and the audit trail."
+ },
+ {
+  "stop": 83,
+  "key": "s83",
+  "title": "Safety and data",
+  "text": "The platform is built to the Department for Education's Generative A I Product Safety Standards, U K G D P R and U K hosting, with safeguards set for the youngest user."
+ },
+ {
+  "stop": 84,
+  "key": "s84",
+  "title": "Developing Experts delivers, PA Consulting manages and assures",
+  "text": "Developing Experts leads the partnership, and builds, hosts and supports the platform. P A Consulting holds the contract with U K A E A, adapts the A I Tutor engine, project manages the client brief, and independently assures governance, data protection, security, accessibility and U K government A I compliance. That gives U K A E A the comfort of a large firm."
+ },
+ {
+  "stop": 85,
+  "key": "s85",
+  "title": "Concept, pilot, scale",
+  "text": "We are at step one. Your feedback on this concept shapes the pilot brief."
+ },
+ {
+  "stop": 86,
+  "key": "s86",
+  "title": "Questions for UKAEA",
+  "text": "Finally, what we've assumed, and what we'd like to agree at the face-to-face meeting. That's the tour. Thank you for watching."
+ }
+]

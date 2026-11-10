@@ -1,0 +1,346 @@
+{
+ "s01": {
+  "src": "audio-ukaea/s01.mp3",
+  "dur": 23.2
+ },
+ "s02": {
+  "src": "audio-ukaea/s02.mp3",
+  "dur": 12.1
+ },
+ "s03": {
+  "src": "audio-ukaea/s03.mp3",
+  "dur": 11.7
+ },
+ "s04": {
+  "src": "audio-ukaea/s04.mp3",
+  "dur": 19.6
+ },
+ "s05": {
+  "src": "audio-ukaea/s05.mp3",
+  "dur": 21.9
+ },
+ "s06": {
+  "src": "audio-ukaea/s06.mp3",
+  "dur": 22.8
+ },
+ "s07": {
+  "src": "audio-ukaea/s07.mp3",
+  "dur": 18.6
+ },
+ "s08": {
+  "src": "audio-ukaea/s08.mp3",
+  "dur": 14.1
+ },
+ "s09": {
+  "src": "audio-ukaea/s09.mp3",
+  "dur": 11.6
+ },
+ "s10": {
+  "src": "audio-ukaea/s10.mp3",
+  "dur": 13.6
+ },
+ "s11": {
+  "src": "audio-ukaea/s11.mp3",
+  "dur": 16.1
+ },
+ "s12": {
+  "src": "audio-ukaea/s12.mp3",
+  "dur": 11.7
+ },
+ "s13": {
+  "src": "audio-ukaea/s13.mp3",
+  "dur": 8.1
+ },
+ "s14": {
+  "src": "audio-ukaea/s14.mp3",
+  "dur": 24.6
+ },
+ "s15": {
+  "src": "audio-ukaea/s15.mp3",
+  "dur": 11.6
+ },
+ "s16": {
+  "src": "audio-ukaea/s16.mp3",
+  "dur": 17.2
+ },
+ "s17": {
+  "src": "audio-ukaea/s17.mp3",
+  "dur": 21.6
+ },
+ "s18": {
+  "src": "audio-ukaea/s18.mp3",
+  "dur": 8.1
+ },
+ "s19": {
+  "src": "audio-ukaea/s19.mp3",
+  "dur": 15.6
+ },
+ "s20": {
+  "src": "audio-ukaea/s20.mp3",
+  "dur": 10.6
+ },
+ "s21": {
+  "src": "audio-ukaea/s21.mp3",
+  "dur": 15.9
+ },
+ "s22": {
+  "src": "audio-ukaea/s22.mp3",
+  "dur": 13.8
+ },
+ "s23": {
+  "src": "audio-ukaea/s23.mp3",
+  "dur": 9.7
+ },
+ "s24": {
+  "src": "audio-ukaea/s24.mp3",
+  "dur": 14.7
+ },
+ "s25": {
+  "src": "audio-ukaea/s25.mp3",
+  "dur": 15.1
+ },
+ "s26": {
+  "src": "audio-ukaea/s26.mp3",
+  "dur": 7.6
+ },
+ "s27": {
+  "src": "audio-ukaea/s27.mp3",
+  "dur": 13.6
+ },
+ "s28": {
+  "src": "audio-ukaea/s28.mp3",
+  "dur": 12.2
+ },
+ "s29": {
+  "src": "audio-ukaea/s29.mp3",
+  "dur": 12.6
+ },
+ "s30": {
+  "src": "audio-ukaea/s30.mp3",
+  "dur": 14.1
+ },
+ "s31": {
+  "src": "audio-ukaea/s31.mp3",
+  "dur": 12.3
+ },
+ "s32": {
+  "src": "audio-ukaea/s32.mp3",
+  "dur": 9.5
+ },
+ "s33": {
+  "src": "audio-ukaea/s33.mp3",
+  "dur": 10.0
+ },
+ "s34": {
+  "src": "audio-ukaea/s34.mp3",
+  "dur": 8.7
+ },
+ "s35": {
+  "src": "audio-ukaea/s35.mp3",
+  "dur": 9.4
+ },
+ "s36": {
+  "src": "audio-ukaea/s36.mp3",
+  "dur": 9.6
+ },
+ "s37": {
+  "src": "audio-ukaea/s37.mp3",
+  "dur": 21.2
+ },
+ "s38": {
+  "src": "audio-ukaea/s38.mp3",
+  "dur": 12.5
+ },
+ "s39": {
+  "src": "audio-ukaea/s39.mp3",
+  "dur": 7.5
+ },
+ "s40": {
+  "src": "audio-ukaea/s40.mp3",
+  "dur": 18.9
+ },
+ "s41": {
+  "src": "audio-ukaea/s41.mp3",
+  "dur": 11.1
+ },
+ "s42": {
+  "src": "audio-ukaea/s42.mp3",
+  "dur": 15.6
+ },
+ "s43": {
+  "src": "audio-ukaea/s43.mp3",
+  "dur": 11.4
+ },
+ "s44": {
+  "src": "audio-ukaea/s44.mp3",
+  "dur": 18.5
+ },
+ "s45": {
+  "src": "audio-ukaea/s45.mp3",
+  "dur": 21.4
+ },
+ "s46": {
+  "src": "audio-ukaea/s46.mp3",
+  "dur": 8.8
+ },
+ "s47": {
+  "src": "audio-ukaea/s47.mp3",
+  "dur": 12.6
+ },
+ "s48": {
+  "src": "audio-ukaea/s48.mp3",
+  "dur": 14.3
+ },
+ "s49": {
+  "src": "audio-ukaea/s49.mp3",
+  "dur": 7.8
+ },
+ "s50": {
+  "src": "audio-ukaea/s50.mp3",
+  "dur": 9.8
+ },
+ "s51": {
+  "src": "audio-ukaea/s51.mp3",
+  "dur": 9.8
+ },
+ "s52": {
+  "src": "audio-ukaea/s52.mp3",
+  "dur": 9.0
+ },
+ "s53": {
+  "src": "audio-ukaea/s53.mp3",
+  "dur": 7.7
+ },
+ "s54": {
+  "src": "audio-ukaea/s54.mp3",
+  "dur": 9.3
+ },
+ "s55": {
+  "src": "audio-ukaea/s55.mp3",
+  "dur": 12.4
+ },
+ "s56": {
+  "src": "audio-ukaea/s56.mp3",
+  "dur": 11.4
+ },
+ "s57": {
+  "src": "audio-ukaea/s57.mp3",
+  "dur": 13.2
+ },
+ "s58": {
+  "src": "audio-ukaea/s58.mp3",
+  "dur": 7.7
+ },
+ "s59": {
+  "src": "audio-ukaea/s59.mp3",
+  "dur": 15.3
+ },
+ "s60": {
+  "src": "audio-ukaea/s60.mp3",
+  "dur": 10.6
+ },
+ "s61": {
+  "src": "audio-ukaea/s61.mp3",
+  "dur": 17.7
+ },
+ "s62": {
+  "src": "audio-ukaea/s62.mp3",
+  "dur": 16.2
+ },
+ "s63": {
+  "src": "audio-ukaea/s63.mp3",
+  "dur": 15.3
+ },
+ "s64": {
+  "src": "audio-ukaea/s64.mp3",
+  "dur": 8.7
+ },
+ "s65": {
+  "src": "audio-ukaea/s65.mp3",
+  "dur": 16.2
+ },
+ "s66": {
+  "src": "audio-ukaea/s66.mp3",
+  "dur": 12.0
+ },
+ "s67": {
+  "src": "audio-ukaea/s67.mp3",
+  "dur": 11.3
+ },
+ "s68": {
+  "src": "audio-ukaea/s68.mp3",
+  "dur": 10.4
+ },
+ "s69": {
+  "src": "audio-ukaea/s69.mp3",
+  "dur": 12.4
+ },
+ "s70": {
+  "src": "audio-ukaea/s70.mp3",
+  "dur": 9.6
+ },
+ "s71": {
+  "src": "audio-ukaea/s71.mp3",
+  "dur": 11.9
+ },
+ "s72": {
+  "src": "audio-ukaea/s72.mp3",
+  "dur": 13.6
+ },
+ "s73": {
+  "src": "audio-ukaea/s73.mp3",
+  "dur": 3.1
+ },
+ "s74": {
+  "src": "audio-ukaea/s74.mp3",
+  "dur": 10.0
+ },
+ "s75": {
+  "src": "audio-ukaea/s75.mp3",
+  "dur": 13.5
+ },
+ "s76": {
+  "src": "audio-ukaea/s76.mp3",
+  "dur": 11.1
+ },
+ "s77": {
+  "src": "audio-ukaea/s77.mp3",
+  "dur": 7.7
+ },
+ "s78": {
+  "src": "audio-ukaea/s78.mp3",
+  "dur": 12.6
+ },
+ "s79": {
+  "src": "audio-ukaea/s79.mp3",
+  "dur": 8.4
+ },
+ "s80": {
+  "src": "audio-ukaea/s80.mp3",
+  "dur": 8.2
+ },
+ "s81": {
+  "src": "audio-ukaea/s81.mp3",
+  "dur": 10.2
+ },
+ "s82": {
+  "src": "audio-ukaea/s82.mp3",
+  "dur": 9.4
+ },
+ "s83": {
+  "src": "audio-ukaea/s83.mp3",
+  "dur": 10.8
+ },
+ "s84": {
+  "src": "audio-ukaea/s84.mp3",
+  "dur": 26.4
+ },
+ "s85": {
+  "src": "audio-ukaea/s85.mp3",
+  "dur": 5.7
+ },
+ "s86": {
+  "src": "audio-ukaea/s86.mp3",
+  "dur": 7.7
+ }
+}
